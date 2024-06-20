@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import PuffLoader from "react-spinners/PuffLoader";
 import "./CalCul.css";
 
-// Function to calculate BMR
+//BMR Berechnen
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
     return (10 * gewicht) + (6.25 * groesse) - (5 * alter) + 5;
@@ -12,12 +13,12 @@ const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   }
 };
 
-// Function to calculate TDEE
+// TDEE Berechnen
 const berechnungTDEE = (bmr, aktivfaktor) => {
   return bmr * aktivfaktor;
 };
 
-// Function to calculate final calorie needs
+// Kalorien Berechnen
 const kalorienErg = (tdee, gewuenscht) => {
   if (gewuenscht === 'Muskelaufbau') {
     return tdee * 1.15;
@@ -26,7 +27,7 @@ const kalorienErg = (tdee, gewuenscht) => {
   }
 };
 
-// Function to assign macro values
+// Werte Berechnen
 const teilZuweisung = (tdee, gewuenscht) => {
   let kohlenhydrate, fette, proteine;
   const kalorien = kalorienErg(tdee, gewuenscht);
@@ -46,8 +47,8 @@ const teilZuweisung = (tdee, gewuenscht) => {
   ];
 };
 
-// The input page for data entry
-const InputPage = ({ setData }) => {
+
+const InputPage = ({ setData, setLoading }) => {
   const [gewicht, setGewicht] = useState("");
   const [groesse, setGroesse] = useState("");
   const [alter, setAlter] = useState("");
@@ -93,8 +94,13 @@ const InputPage = ({ setData }) => {
     const bmr = berechnungBMR(gewichtValue, groesseValue, alterValue, geschlecht);
     const tdee = berechnungTDEE(bmr, aktivfaktor);
     const macroData = teilZuweisung(tdee, ziel);
-    setData(macroData);
-    navigate('/chart');
+    
+    setLoading(true); 
+    setTimeout(() => {
+      setData(macroData);
+      setLoading(false); 
+      navigate('/chart');
+    }, 5000); 
   };
 
   return (
@@ -151,21 +157,20 @@ const InputPage = ({ setData }) => {
   );
 };
 
-// The chart display page
+
 const ChartPage = ({ data }) => {
   const COLORS = ["rgba(210, 4, 45, 0.6)", "rgba(170, 255, 0, 0.6)", "rgba(125, 249, 255, 0.6)"];
   const BORDER_COLORS = ["rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(0, 0, 255, 1)"];
 
-  // Calculate total calories
+
   const totalCalories = data.reduce((acc, item) => acc + item.value, 0);
 
-  // Function to format the label
   const formatLabel = ({ name, percent }) => `${name} (${(percent * 100).toFixed(2)}%)`;
 
   return (
     <div className="container">
       <h1>Kalorien</h1>
-      <h2>Gesamtkalorien: {totalCalories.toFixed(2)} kcl</h2> {/* Display total calories */}
+      <h2>Gesamtkalorien: {totalCalories.toFixed(2)} kcl</h2> 
       <div className="CalCul">
         <PieChart width={400} height={400}>
           <Pie
@@ -195,13 +200,35 @@ const ChartPage = ({ data }) => {
 
 const CalCul = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false); 
+
+  useEffect(() => {
+    if (loading) {
+      const timeout = setTimeout(() => {
+        setLoading(false);
+      }, 5000); //loader Zeit
+
+      return () => clearTimeout(timeout); 
+    }
+  }, [loading]);
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<InputPage setData={setData} />} />
+        <Route
+          exact
+          path="/"
+          element={<InputPage setData={setData} setLoading={setLoading} />} 
+        />
         <Route path="/chart" element={<ChartPage data={data} />} />
       </Routes>
+
+      
+      {loading && (
+        <div className="loader-overlay">
+          <PuffLoader color={"#ffffff"} loading={true} size={150} cssOverride={{}} />
+        </div>
+      )}
     </Router>
   );
 };
