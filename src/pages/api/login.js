@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       }
 
       const sessionToken = crypto.randomBytes(64).toString('hex');
-      const sessionData = { token: sessionToken, name: user.name };
+      const sessionData = { token: sessionToken, user };
 
       
       addSessionToken(sessionToken, sessionData);
