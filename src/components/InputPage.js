@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
-import { PieChart, Pie, Tooltip, Cell } from "recharts";
-import PuffLoader from "react-spinners/PuffLoader";
-import "./CalCul.css";
-import "./Entscheidung";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import crypto from 'crypto';
 
-//BMR Berechnen
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
     return (10 * gewicht) + (6.25 * groesse) - (5 * alter) + 5;
@@ -14,12 +10,10 @@ const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   }
 };
 
-// TDEE Berechnen
 const berechnungTDEE = (bmr, aktivfaktor) => {
   return bmr * aktivfaktor;
 };
 
-// Kalorien Berechnen
 const kalorienErg = (tdee, gewuenscht) => {
   if (gewuenscht === 2) {
     return tdee * 1.15;
@@ -28,7 +22,6 @@ const kalorienErg = (tdee, gewuenscht) => {
   }
 };
 
-// Werte Berechnen
 const teilZuweisung = (tdee, gewuenscht) => {
   let kohlenhydrate, fette, proteine;
   const kalorien = kalorienErg(tdee, gewuenscht);
@@ -48,7 +41,6 @@ const teilZuweisung = (tdee, gewuenscht) => {
   ];
 };
 
-
 const InputPage = ({ setData, setLoading }) => {
   const [gewicht, setGewicht] = useState("");
   const [groesse, setGroesse] = useState("");
@@ -56,9 +48,9 @@ const InputPage = ({ setData, setLoading }) => {
   const [geschlecht, setGeschlecht] = useState("");
   const [aktivitaetslevel, setAktivitaetslevel] = useState("");
   const [ziel, setZiel] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const handleAddData = () => {
+  const handleAddData = async () => {
     const gewichtValue = parseFloat(gewicht);
     const groesseValue = parseFloat(groesse);
     const alterValue = parseInt(alter);
@@ -95,13 +87,24 @@ const InputPage = ({ setData, setLoading }) => {
     const bmr = berechnungBMR(gewichtValue, groesseValue, alterValue, geschlecht);
     const tdee = berechnungTDEE(bmr, aktivfaktor);
     const macroData = teilZuweisung(tdee, ziel);
-    
-    setLoading(true); 
-    setTimeout(() => {
-      setData(macroData);
-      setLoading(false); 
-      navigate('/chart');
-    }, 5000); 
+
+    setLoading(true);
+    setTimeout(async () => {
+      try {
+        const sessionToken = crypto.randomBytes(64).toString('hex');
+        const sessionData = { token: sessionToken, macroData };
+
+        localStorage.setItem('sessionToken', JSON.stringify(sessionData));
+
+        setData(macroData);
+        setLoading(false);
+        router.push('/chart');
+      } catch (error) {
+        console.error('Error saving session data:', error);
+        setLoading(false);
+        alert('Fehler beim Speichern der Daten');
+      }
+    }, 5000);
   };
 
   return (
@@ -150,88 +153,12 @@ const InputPage = ({ setData, setLoading }) => {
       </select>
       <select value={ziel} onChange={e => setZiel(e.target.value)}>
         <option value="">Ziel</option>
-        <option value="Muskelaufbau">Muskelaufbau</option>
-        <option value="Gewichtsverlust">Gewichtsverlust</option>
+        <option value="2">Muskelaufbau</option>
+        <option value="1">Gewichtsverlust</option>
       </select>
       <button onClick={handleAddData}>Weiter</button>
     </div>
   );
 };
 
-
-const ChartPage = ({ data }) => {
-  const COLORS = ["rgba(210, 4, 45, 0.6)", "rgba(170, 255, 0, 0.6)", "rgba(125, 249, 255, 0.6)"];
-  const BORDER_COLORS = ["rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(0, 0, 255, 1)"];
-
-
-  const totalCalories = data.reduce((acc, item) => acc + item.value, 0);
-
-  const formatLabel = ({ name, percent }) => `${name} (${(percent * 100).toFixed(2)}%)`;
-
-  return (
-    <div className="container">
-      <h1>Kalorien</h1>
-      <h2>Gesamtkalorien: {totalCalories.toFixed(2)} kcl</h2> 
-      <div className="CalCul">
-        <PieChart width={400} height={400}>
-          <Pie
-            dataKey="value"
-            isAnimationActive={false}
-            data={data}
-            cx={200}
-            cy={200}
-            outerRadius={80}
-            label={formatLabel}
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-                stroke={BORDER_COLORS[index % BORDER_COLORS.length]}
-                strokeWidth={1}
-              />
-            ))}
-          </Pie>
-          <Tooltip formatter={(value, name, props) => [`${props.payload.name}: ${value.toFixed(2)} Kalorien`, ""]} /> 
-        </PieChart>
-      </div>
-    </div>
-  );
-};
-
-const CalCul = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false); 
-
-  useEffect(() => {
-    if (loading) {
-      const timeout = setTimeout(() => {
-        setLoading(false);
-      }, 5000); //loader Zeit
-
-      return () => clearTimeout(timeout); 
-    }
-  }, [loading]);
-
-  return (
-    <Router>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={<InputPage setData={setData} setLoading={setLoading} />} 
-        />
-        <Route path="/chart" element={<ChartPage data={data} />} />
-      </Routes>
-
-      
-      {loading && (
-        <div className="loader-overlay">
-          <PuffLoader color={"#ffffff"} loading={true} size={150} cssOverride={{}} />
-        </div>
-      )}
-    </Router>
-  );
-};
-
-export default CalCul;
+export default InputPage;

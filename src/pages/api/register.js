@@ -1,52 +1,50 @@
-import dbConnect from '../../utils/dbConnect';
+import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
-import { ObjectId } from 'mongodb';
 import crypto from 'crypto';
 
-function hashEmail(email) {
-  return crypto.createHash('sha256').update(email).digest('hex');
-}
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, password } = req.body;
+    const { email, password, vorname, nachname } = req.body;
 
     try {
-      const client = await dbConnect();
-      const db = client.db('User');
+      await client.connect();
+      const database = client.db('User');
+      const userLoginCollection = database.collection('userLogin');
+      const usersCollection = database.collection('users');
 
-      const normalizedEmail = email.trim().toLowerCase();
-      const hashedEmail = hashEmail(normalizedEmail);
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedEmail = crypto.createHash('sha256').update(email).digest('hex');
 
-      const userLoginCollection = db.collection('userLogin');
-      const existingUser = await userLoginCollection.findOne({ email: hashedEmail });
-
-      if (existingUser) {
-        return res.status(400).json({ error: 'Email is already registered' });
-      }
-
-      const userId = new ObjectId();
-      
-      const userCollection = db.collection('users');
-      const newUser = { userid: userId, name };
-      await userCollection.insertOne(newUser);
-
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);
-
+      // Create new userLogin entry
       const newUserLogin = {
         email: hashedEmail,
         password: hashedPassword,
-        userid: userId
+        userId
       };
-      await userLoginCollection.insertOne(newUserLogin);
+      const resultUserLogin = await userLoginCollection.insertOne(newUserLogin);
+      const userId = resultUserLogin.insertedId;
 
-      res.status(201).json({ message: 'User registered' });
+      // Create new users entry
+      const newUser = {
+        vorname,
+        nachname,
+        userId,
+      };
+      await usersCollection.insertOne(newUser);
+
+      res.status(201).json({ userId });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Server error' });
+      console.error('Error connecting to the database:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } finally {
+      await client.close();
     }
   } else {
     res.status(405).json({ error: 'Method not allowed' });
   }
 }
+
+export default handler;
