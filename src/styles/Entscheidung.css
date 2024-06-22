@@ -83,3 +83,29 @@ body {
   .image-container.active .weiter-button {
     display: block;
   }
+
+  /*Hier der Homepage Teil*/
+
+   .home-container {
+      text-align: center;
+    }
+
+    .header-image-container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .header-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .header-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5em;
+      font-weight: bold;
+    }
