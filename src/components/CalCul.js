@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-route
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
 import PuffLoader from "react-spinners/PuffLoader";
 import "./CalCul.css";
+import "./Entscheidung";
 
 //BMR Berechnen
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
@@ -20,7 +21,7 @@ const berechnungTDEE = (bmr, aktivfaktor) => {
 
 // Kalorien Berechnen
 const kalorienErg = (tdee, gewuenscht) => {
-  if (gewuenscht === 'Muskelaufbau') {
+  if (gewuenscht === 2) {
     return tdee * 1.15;
   } else {
     return tdee * 0.85;
@@ -31,7 +32,7 @@ const kalorienErg = (tdee, gewuenscht) => {
 const teilZuweisung = (tdee, gewuenscht) => {
   let kohlenhydrate, fette, proteine;
   const kalorien = kalorienErg(tdee, gewuenscht);
-  if (gewuenscht === 'Muskelaufbau') {
+  if (gewuenscht === 2) {
     kohlenhydrate = kalorien * 0.50;
     fette = kalorien * 0.20;
     proteine = kalorien * 0.30;
