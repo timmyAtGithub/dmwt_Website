@@ -1,0 +1,75 @@
+/* App Component Styles */
+.App {
+    text-align: center;
+    font-family: sans-serif;
+  }
+   
+  .App-header {
+    background-color: #242424;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+  }
+   
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+   
+  /* SignUpButton Component Styles */
+  .signup-button {
+    padding: 20px 40px;
+    font-size: 36px;
+    background-color: #242424;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+   
+  .signup-button:hover {
+    background-color: #6B2222;
+  }
+   
+  /* ImageComponent Component Styles */
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+   
+  .image-container {
+    position: relative;
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+   
+  .image {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+  }
+   
+  .overlay {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 95%;
+    font-size: 12px;
+  }
