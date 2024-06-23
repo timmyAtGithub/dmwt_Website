@@ -3,6 +3,7 @@
   justify-content: center; /* Horizontal zentrieren */
   align-items: center; /* Vertikal zentrieren */
   height: 100vh; /* Vollständige Höhe des Viewports nutzen */
+  border: black;
 }
 
 .cssFont_1 {

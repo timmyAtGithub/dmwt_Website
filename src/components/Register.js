@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import styles from '../styles/Register.module.css'; // Separate CSS module for styling
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -14,12 +15,12 @@ const Register = () => {
       const response = await axios.post('/api/register', { email, password, vorname, nachname });
       const userId = response.data.userId;
 
-      // Sitzungstoken und Daten abrufen
+      // Session token and data retrieval
       const sessionData = JSON.parse(localStorage.getItem('sessionToken'));
       const macroData = sessionData.macroData;
       const gewicht = sessionData.gewicht;
 
-      // Daten speichern
+      // Save calorie data
       await axios.post('/api/saveCaloriesData', {
         userId,
         calories: macroData.reduce((acc, item) => acc + item.value, 0),
@@ -28,7 +29,7 @@ const Register = () => {
         carbs: macroData.find(item => item.name === 'Kohlenhydrate').value
       });
 
-      // Gewicht speichern
+      // Save weight data
       await axios.post('/api/saveWeightData', {
         userId,
         weight: gewicht,
@@ -36,7 +37,7 @@ const Register = () => {
       });
 
       alert('Registrierung erfolgreich und Daten gespeichert');
-      localStorage.removeItem('sessionToken'); // Sitzungstoken nach Verwendung löschen
+      localStorage.removeItem('sessionToken'); // Remove session token after use
       router.push('/loginPage');
     } catch (error) {
       console.error('Error during registration:', error);
@@ -45,33 +46,37 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Registrierung</h1>
+    <div className={styles.container} style={{ marginBottom: '20px' }}>
+      <h1>Registriere dich JETZT!</h1>
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={e => setEmail(e.target.value)}
+        className={styles.input}
       />
       <input
         type="password"
         placeholder="Passwort"
         value={password}
         onChange={e => setPassword(e.target.value)}
+        className={styles.input}
       />
       <input
         type="text"
         placeholder="Vorname"
         value={vorname}
         onChange={e => setVorname(e.target.value)}
+        className={styles.input}
       />
       <input
         type="text"
         placeholder="Nachname"
         value={nachname}
         onChange={e => setNachname(e.target.value)}
+        className={styles.input}
       />
-      <button onClick={handleRegister}>Registrieren</button>
+      <button onClick={handleRegister} className={styles.button}>Registrieren</button>
     </div>
   );
 };
