@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';  // Import useRouter hook from Next.js
 import CountCalories from './CountCalories';
 import WeightTracker from './WeightTracker';
 import WeightTrackerBig from './WeightTrackerBig';
@@ -9,16 +10,23 @@ import styles from '../styles/Dashboard.module.css';
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [showWeightTrackerBig, setShowWeightTrackerBig] = useState(false);
+  const router = useRouter();  // Initialize useRouter
 
   useEffect(() => {
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
-        setUser(response.data);
+        if (response.data) {
+          setUser(response.data);
+        } else {
+          router.push('/loginPage');  // Redirect to login page if no user data is found
+        }
       } catch (error) {
         console.error('Session verification failed:', error);
+        router.push('/loginPage');  // Redirect to login page on error
       }
     };
+
     const reloaded = localStorage.getItem('reloaded');
     if (!reloaded) {
       localStorage.setItem('reloaded', 'true');
@@ -30,7 +38,7 @@ const Dashboard = () => {
     return () => {
       localStorage.removeItem('reloaded');
     };
-  }, []);
+  }, [router]);
 
   const handleShowWeightTrackerBig = () => {
     setShowWeightTrackerBig(true);
