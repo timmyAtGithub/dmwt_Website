@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
     <div className={styles.loginWrapper}>
       <div className={styles.loginInfo}>
         <h2 className={`${styles.loginHeading} ${styles.cssFont_1}`}>NutriFit</h2>
-        <p className={styles.loginText}>Bitte loggen Sie sich ein, um fortzufahren.</p>
+        <p className={styles.loginText}>Bitte loggen Sie sich ein um fortzufahren.</p>
       </div>
       <div className={styles.loginContainer}>
         <div className={styles.loginForm}>
