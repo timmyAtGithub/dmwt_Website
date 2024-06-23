@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/ChartPage.module.css';
 
 const ChartPage = ({ data }) => {
-  const COLORS = ["#aa0000", "#aaaa00", "#0000aa"];
+  const COLORS = ["#e9967a", "#d2b48c", "#00a0aa"];
   const BORDER_COLORS = ["#000000", "#000000", "#000000"];
   const router = useRouter();
 

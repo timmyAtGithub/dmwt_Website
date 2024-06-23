@@ -1,14 +1,15 @@
 .loginWrapper {
   display: flex;
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-  height: 100vh; /* Vollständige Höhe des Viewports nutzen */
+  justify-content: center;
+  align-items: center;
+  height: 600px;
   border: black;
+  overflow: hidden;
 }
 
 .cssFont_1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 60px; /* Größere Schrift für die Überschrift */
+  font-size: 60px;
   letter-spacing: 0px;
   word-spacing: 0px;
   color: #b80000;
@@ -16,8 +17,8 @@
   font-style: oblique;
   font-variant: normal;
   text-transform: none;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2); /* Textschatten für den 3D-Effekt */
-  margin-top: -20px; /* Negative Margin, um die Höhe anzupassen */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  margin-top: -20px;
 }
 
 .loginInfo {
