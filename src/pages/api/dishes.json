@@ -1,0 +1,346 @@
+[
+{
+    "_id": { "$oid": "667560819c4e99831dc3d360" },
+    "namegericht": "Gebratene Eier mit Beilagen",
+    "kolenhydrate": "34",
+    "fette": "36",
+    "eiweiß": "44",
+    "kalorien": "700",
+    "textbeschreibung": "Ein schnelles und leckeres Gericht, das sowohl als Frühstück als auch als leichtes Mittagessen geeignet ist. Die gebratenen Eier werden mit frischen Zutaten zubereitet und auf dem Teller angerichtet. Diese Mahlzeit bietet eine ausgewogene Kombination aus hochwertigem Eiweiß und gesunden Kohlenhydraten, ideal für eine nahrhafte und sättigende Mahlzeit.",
+    "textrezept": "Erhitzen Sie eine Pfanne mit etwas Olivenöl. Schlagen Sie zwei Eier in die Pfanne und braten Sie sie bei mittlerer Hitze.\nWährend die Eier braten, bereiten Sie eine Beilage aus frischem Gemüse oder Salat vor.\nNach ca. 3-4 Minuten sind die Eier fertig gebraten. Nehmen Sie sie aus der Pfanne und richten Sie sie auf einem Teller an.\nServieren Sie die gebratenen Eier mit der vorbereiteten Beilage und genießen Sie das einfache und köstliche Gericht!",
+    "zutaten": "5 Eier, 250g Kartoffeln, Gewürze",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6675b0949c4e99831dc3d36b" },
+    "namegericht": "Gebratener Fisch mit Kartoffeln",
+    "kohlenhydrate": "40",
+    "fette": "12",
+    "eiweiß": "25",
+    "kalorien": "350",
+    "textbeschreibung": "Ein leichtes und herzhaftes Gericht, bestehend aus knusprig gebratenem Fischfilet, begleitet von goldbraunen Kartoffeln. Perfekt gewürzt und in einer Pfanne gebraten, um den natürlichen Geschmack zu bewahren.",
+    "textrezept": "Salze und pfeffere das Fischfilet und beträufle es mit Zitronensaft. Schäle die Kartoffeln, schneide sie in Würfel und gare sie in Salzwasser, bis sie weich sind. Erhitze etwas Öl in einer Pfanne und brate das Fischfilet auf jeder Seite etwa 3-4 Minuten, bis es goldbraun und durchgegart ist. In einer anderen Pfanne erhitze etwas Butter und brate die gekochten Kartoffeln an, bis sie goldbraun und knusprig sind. Serviere den Fisch zusammen mit den Kartoffeln und garniere das Gericht mit frischen Kräutern wie Petersilie oder Dill. Optional kann das Gericht mit einem Spritzer Zitronensaft abgerundet werden.",
+    "zutaten": "2 Fischfilets, 4 Kartoffeln, 1 Zitrone, Salz, Pfeffer, 2 EL Olivenöl, 1 EL Butter, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b0f09c4e99831dc3d36c" },
+    "namegericht": "Schweinekeule mit Grillgemüse",
+    "kohlenhydrate": "20",
+    "fette": "25",
+    "eiweiß": "40",
+    "kalorien": "450",
+    "textbeschreibung": "Saftige Schweinekeule, schonend im Ofen gebraten, serviert mit einer bunten Mischung aus gegrilltem Gemüse. Ein nahrhaftes und leckeres Hauptgericht.",
+    "textrezept": "Reibe die Schweinekeule gründlich mit Salz, Pfeffer und Rosmarin ein. Heize den Ofen auf 180°C vor und lege die Keule in eine feuerfeste Form. Brate sie etwa eine Stunde lang, wobei du sie gelegentlich mit ihrem eigenen Saft übergießt, damit sie saftig bleibt. Schneide währenddessen das Gemüse (Paprika, Zucchini, Auberginen und Tomaten) in gleichmäßige Stücke und mariniere es mit Olivenöl, Salz und Pfeffer. Nach etwa 40 Minuten füge das Gemüse zur Schweinekeule hinzu und lasse es mitbraten. Nimm die Keule aus dem Ofen, wenn sie eine knusprige Kruste und eine Kerntemperatur von etwa 75°C erreicht hat. Lass sie kurz ruhen, bevor du sie in Scheiben schneidest und zusammen mit dem Grillgemüse servierst.",
+    "zutaten": "1 Schweinekeule, Salz, Pfeffer, 2 Zweige Rosmarin, 2 EL Olivenöl, 1 Paprika, 1 Zucchini, 1 Aubergine, 2 Tomaten",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6675b1059c4e99831dc3d36d" },
+    "namegericht": "Gegrillter Gemüseteller",
+    "kohlenhydrate": "30",
+    "fette": "8",
+    "eiweiß": "5",
+    "kalorien": "200",
+    "textbeschreibung": "Ein bunter und gesunder Teller voller gegrilltem Gemüse wie Paprika, Zucchini, Auberginen und Champignons. Ideal als Beilage oder leichtes Hauptgericht.",
+    "textrezept": "Heize den Grill auf mittlere Hitze vor. Schneide Paprika, Zucchini, Auberginen und Champignons in gleichmäßige Scheiben. Mariniere das Gemüse mit einer Mischung aus Olivenöl, Salz, Pfeffer und gehacktem Knoblauch. Lege das Gemüse auf den Grill und grille es etwa 5-7 Minuten pro Seite, bis es weich und leicht gebräunt ist. Serviere den Gemüseteller warm und garniere ihn mit frischen Kräutern wie Basilikum oder Petersilie. Dazu passt ein Joghurt-Dip oder Balsamico-Dressing.",
+    "zutaten": "1 Paprika, 1 Zucchini, 1 Aubergine, 200 g Champignons, 3 EL Olivenöl, 2 Knoblauchzehen, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "1",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b11c9c4e99831dc3d36e" },
+    "namegericht": "Gegrilltes Hähnchen",
+    "kohlenhydrate": "0",
+    "fette": "10",
+    "eiweiß": "45",
+    "kalorien": "300",
+    "textbeschreibung": "Saftiges und aromatisches Hähnchen, perfekt gegrillt, um den natürlichen Geschmack und die Saftigkeit zu bewahren. Ideal für ein proteinreiches Mittag- oder Abendessen.",
+    "textrezept": "Mariniere Hähnchenbrustfilets in einer Mischung aus Olivenöl, Zitronensaft, gehacktem Knoblauch, Salz, Pfeffer und Paprikapulver. Lasse das Hähnchen mindestens 30 Minuten marinieren. Heize den Grill auf mittlere Hitze vor und grille die Hähnchenbrustfilets etwa 6-7 Minuten pro Seite, bis sie durchgegart und leicht gebräunt sind. Lass das Hähnchen vor dem Servieren kurz ruhen, um die Säfte zu bewahren. Serviere es mit einer Beilage deiner Wahl, wie gegrilltem Gemüse oder einem frischen Salat.",
+    "zutaten": "2 Hähnchenbrustfilets, 2 EL Olivenöl, 1 Zitrone, 3 Knoblauchzehen, Salz, Pfeffer, 1 TL Paprikapulver",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b12e9c4e99831dc3d36f" },
+    "namegericht": "Gebratener Lachs mit Ofengemüse",
+    "kohlenhydrate": "15",
+    "fette": "25",
+    "eiweiß": "30",
+    "kalorien": "400",
+    "textbeschreibung": "Saftiger Lachs, perfekt gebraten und begleitet von einer Mischung aus Ofengemüse. Ein ausgewogenes und leckeres Gericht, das schnell und einfach zuzubereiten ist.",
+    "textrezept": "Heize den Ofen auf 200°C vor. Schneide Gemüse wie Karotten, Zucchini, Paprika und Kartoffeln in gleichmäßige Stücke. Mariniere das Gemüse mit Olivenöl, Salz, Pfeffer und Rosmarin und lege es auf ein Backblech. Brate das Gemüse im Ofen etwa 25-30 Minuten, bis es weich und leicht gebräunt ist. Würze die Lachfilets mit Salz und Pfeffer. Erhitze etwas Olivenöl in einer Pfanne und brate die Lachfilets auf jeder Seite etwa 3-4 Minuten, bis sie goldbraun und durchgegart sind. Serviere den gebratenen Lachs zusammen mit dem Ofengemüse und garniere das Gericht mit frischen Kräutern wie Dill oder Petersilie.",
+    "zutaten": "2 Lachfilets, 2 Karotten, 1 Zucchini, 1 Paprika, 4 Kartoffeln, 3 EL Olivenöl, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6675b1409c4e99831dc3d370" },
+    "namegericht": "Meeresfrüchteteller mit Soße",
+    "kohlenhydrate": "20",
+    "fette": "15",
+    "eiweiß": "30",
+    "kalorien": "350",
+    "textbeschreibung": "Eine exquisite Auswahl an frischen Meeresfrüchten, serviert mit einer würzigen Soße. Ein delikates Gericht, das die Aromen des Meeres einfängt und für besonderen Genuss sorgt.",
+    "textrezept": "Erhitze etwas Olivenöl in einer großen Pfanne und brate gehackten Knoblauch und Zwiebeln an, bis sie weich sind. Füge eine Mischung aus frischen Meeresfrüchten hinzu, wie Garnelen, Muscheln und Tintenfischringe. Brate die Meeresfrüchte etwa 5-7 Minuten, bis sie durchgegart sind. Lösche alles mit Weißwein ab und füge gehackte Tomaten, Salz, Pfeffer und frische Kräuter wie Petersilie und Thymian hinzu. Lasse die Soße leicht köcheln, bis sie eingedickt ist. Serviere den Meeresfrüchteteller heiß, zusammen mit der würzigen Soße und frischem Brot oder Reis.",
+    "zutaten": "200 g Garnelen, 200 g Muscheln, 200 g Tintenfischringe, 2 EL Olivenöl, 1 Zwiebel, 3 Knoblauchzehen, 200 ml Weißwein, 400 g gehackte Tomaten, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b1549c4e99831dc3d371" },
+    "namegericht": "Gebratene Nudeln in Soße",
+    "kohlenhydrate": "50",
+    "fette": "12",
+    "eiweiß": "10",
+    "kalorien": "400",
+    "textbeschreibung": "Ein einfaches und leckeres Gericht, bestehend aus gebratenen Nudeln in einer aromatischen Soße. Perfekt für ein schnelles Mittag- oder Abendessen.",
+    "textrezept": "Koche die Nudeln nach Packungsanweisung und lasse sie abtropfen. Erhitze etwas Öl in einer Pfanne und brate gehackten Knoblauch und Zwiebeln an, bis sie weich sind. Füge die gekochten Nudeln hinzu und brate sie etwa 3-4 Minuten, bis sie leicht gebräunt sind. Füge eine Mischung aus Sojasoße, Reisessig und Zucker hinzu und rühre gut um. Lasse die Soße leicht einkochen, bis die Nudeln gleichmäßig bedeckt sind. Serviere die gebratenen Nudeln heiß und garniere sie mit gehackten Frühlingszwiebeln oder Sesamsamen.",
+    "zutaten": "200 g Nudeln, 2 EL Olivenöl, 2 Knoblauchzehen, 1 Zwiebel, 3 EL Sojasoße, 1 EL Reisessig, 1 TL Zucker, Frühlingszwiebeln, Sesamsamen",
+    "inhalt": "1",
+    "ziel": "2",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6675b1609c4e99831dc3d372" },
+    "namegericht": "Obstteller",
+    "kohlenhydrate": "40",
+    "fette": "0",
+    "eiweiß": "2",
+    "kalorien": "200",
+    "textbeschreibung": "Ein erfrischender und gesunder Obstteller, perfekt als Snack oder leichtes Dessert. Eine bunte Mischung aus frischen Früchten, die reich an Vitaminen und Antioxidantien sind.",
+    "textrezept": "Schneide eine Auswahl an frischem Obst in mundgerechte Stücke. Ordne das Obst dekorativ auf einem Teller an und garniere es mit frischer Minze oder einem Spritzer Zitronensaft. Serviere den Obstteller gekühlt und genieße die Vielfalt der Aromen und Farben.",
+    "zutaten": "1 Apfel, 1 Banane, 1 Orange, 100 g Trauben, 1 Kiwi, frische Minze, Zitronensaft",
+    "inhalt": "2",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b16d9c4e99831dc3d373" },
+    "namegericht": "Gebratene Pilze in Soße",
+    "kohlenhydrate": "15",
+    "fette": "10",
+    "eiweiß": "5",
+    "kalorien": "200",
+    "textbeschreibung": "Ein einfaches und schmackhaftes Gericht aus gebratenen Pilzen in einer würzigen Soße. Ideal als Beilage oder leichtes Hauptgericht.",
+    "textrezept": "Erhitze etwas Öl in einer Pfanne und brate gehackten Knoblauch und Zwiebeln an, bis sie weich sind. Füge geschnittene Pilze hinzu und brate sie etwa 5-7 Minuten, bis sie weich und leicht gebräunt sind. Füge eine Mischung aus Gemüsebrühe, Sojasoße und Maisstärke hinzu und rühre gut um. Lasse die Soße leicht einkochen, bis sie eindickt. Serviere die gebratenen Pilze in Soße heiß und garniere sie mit frischen Kräutern.",
+    "zutaten": "200 g Pilze, 2 EL Olivenöl, 2 Knoblauchzehen, 1 Zwiebel, 200 ml Gemüsebrühe, 2 EL Sojasoße, 1 TL Maisstärke, frische Kräuter",
+    "inhalt": "1",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b17a9c4e99831dc3d374" },
+    "namegericht": "Gebratener Reis mit Gemüse",
+    "kohlenhydrate": "40",
+    "fette": "10",
+    "eiweiß": "8",
+    "kalorien": "300",
+    "textbeschreibung": "Ein einfaches und leckeres Gericht aus gebratenem Reis mit einer bunten Mischung aus frischem Gemüse. Perfekt für ein schnelles und gesundes Mittag- oder Abendessen.",
+    "textrezept": "Koche den Reis nach Packungsanweisung und lasse ihn abkühlen. Erhitze etwas Öl in einer Pfanne und brate gehackten Knoblauch und Zwiebeln an, bis sie weich sind. Füge geschnittenes Gemüse hinzu und brate es etwa 5-7 Minuten, bis es weich ist. Füge den gekochten Reis hinzu und brate ihn weitere 3-4 Minuten, bis er leicht gebräunt ist. Füge eine Mischung aus Sojasoße, Reisessig und Zucker hinzu und rühre gut um. Serviere den gebratenen Reis mit Gemüse heiß und garniere ihn mit gehackten Frühlingszwiebeln oder Sesamsamen.",
+    "zutaten": "200 g Reis, 2 EL Olivenöl, 2 Knoblauchzehen, 1 Zwiebel, 1 Paprika, 1 Karotte, 100 g Erbsen, 3 EL Sojasoße, 1 EL Reisessig, 1 TL Zucker, Frühlingszwiebeln, Sesamsamen",
+    "inhalt": "2",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b1899c4e99831dc3d375" },
+    "namegericht": "Steak mit Bratkartoffeln",
+    "kohlenhydrate": "30",
+    "fette": "20",
+    "eiweiß": "40",
+    "kalorien": "500",
+    "textbeschreibung": "Ein herzhaftes und sättigendes Gericht, bestehend aus einem saftigen Steak, begleitet von knusprigen Bratkartoffeln. Perfekt für ein gehaltvolles Mittag- oder Abendessen.",
+    "textrezept": "Würze das Steak mit Salz und Pfeffer. Erhitze etwas Öl in einer Pfanne und brate das Steak nach Wunschmedium, etwa 3-4 Minuten pro Seite für medium rare. Lass das Steak nach dem Braten kurz ruhen. Während das Steak ruht, schneide die Kartoffeln in Würfel und brate sie in derselben Pfanne, bis sie goldbraun und knusprig sind. Serviere das Steak zusammen mit den Bratkartoffeln und garniere das Gericht mit frischen Kräutern.",
+    "zutaten": "1 Steak, Salz, Pfeffer, 4 Kartoffeln, 2 EL Olivenöl, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6675b1969c4e99831dc3d376" },
+    "namegericht": "Thunfisch-Proteinshake",
+    "kohlenhydrate": "5",
+    "fette": "2",
+    "eiweiß": "30",
+    "kalorien": "150",
+    "textbeschreibung": "Ein nahrhafter und proteinreicher Shake, ideal für nach dem Training oder als gesunder Snack zwischendurch. Dieser Shake kombiniert den hohen Proteingehalt von Thunfisch mit einer cremigen Textur und einem erfrischenden Geschmack.",
+    "textrezept": "Gebe alle Zutaten in einen Mixer und mixe sie, bis eine glatte Konsistenz erreicht ist. Füge bei Bedarf mehr Wasser oder Milch hinzu, um die gewünschte Konsistenz zu erreichen. Gieße den Shake in ein Glas und genieße ihn sofort als proteinreichen Snack oder nach dem Training.",
+    "zutaten": "1 Dose Thunfisch, 1 Banane, 200 ml Mandelmilch, 1 EL Erdnussbutter, 1 TL Honig, Eiswürfel",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6675b2ac9c4e99831dc3d377" },
+    "namegericht": "Dönerspieße mit Beilagen",
+    "kohlenhydrate": "50",
+    "fette": "20",
+    "eiweiß": "30",
+    "kalorien": "500",
+    "textbeschreibung": "Ein klassisches Gericht mit gegrillten Dönerspießen, serviert mit verschiedenen Beilagen. Perfekt für einen herzhaften und sättigenden Genuss.",
+    "textrezept": "Mariniere Fleischstücke (Lamm, Huhn oder Kalb) mit einer Mischung aus Joghurt, Knoblauch, Zitronensaft, Olivenöl und Gewürzen wie Kreuzkümmel, Paprika, Salz und Pfeffer. Lasse das Fleisch über Nacht marinieren. Stecke das marinierte Fleisch auf Spieße und grille sie auf mittlerer Hitze, bis sie durchgegart und leicht gebräunt sind. Währenddessen bereite Beilagen wie Fladenbrot, Salat, Tomaten, Zwiebeln und eine Joghurt-Knoblauch-Sauce vor. Serviere die gegrillten Dönerspieße zusammen mit den Beilagen und genieße das traditionelle Gericht.",
+    "zutaten": "500 g Fleisch (Lamm, Huhn oder Kalb), 200 g Joghurt, 2 Knoblauchzehen, Saft einer Zitrone, 2 EL Olivenöl, 1 TL Kreuzkümmel, 1 TL Paprikapulver, Salz, Pfeffer, Fladenbrot, Salat, Tomaten, Zwiebeln, Joghurt-Knoblauch-Sauce",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6676a841710f972384a1c109" },
+    "namegericht": "Gemüsepfanne",
+    "kohlenhydrate": "30",
+    "fette": "10",
+    "eiweiß": "5",
+    "kalorien": "250",
+    "textbeschreibung": "Eine gesunde und bunte Gemüsepfanne, reich an Vitaminen und Mineralstoffen. Perfekt als leichtes Hauptgericht oder Beilage.",
+    "textrezept": "Schneide das Gemüse (Paprika, Zucchini, Karotten, Brokkoli) in gleichmäßige Stücke. Erhitze etwas Olivenöl in einer großen Pfanne und brate das Gemüse bei mittlerer Hitze an. Füge nach etwa 5 Minuten gehackten Knoblauch und Zwiebeln hinzu und brate weiter, bis das Gemüse weich, aber noch bissfest ist. Würze mit Salz, Pfeffer und Kräutern nach Geschmack. Serviere die Gemüsepfanne heiß, garniert mit frischen Kräutern wie Petersilie oder Basilikum.",
+    "zutaten": "1 Paprika, 1 Zucchini, 2 Karotten, 1 Brokkoli, 2 EL Olivenöl, 2 Knoblauchzehen, 1 Zwiebel, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "2",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6676a85c710f972384a1c10a" },
+    "namegericht": "Gefüllte Paprika",
+    "kohlenhydrate": "35",
+    "fette": "15",
+    "eiweiß": "20",
+    "kalorien": "400",
+    "textbeschreibung": "Herzhafte und aromatische gefüllte Paprika, gefüllt mit einer Mischung aus Hackfleisch und Reis. Ein nahrhaftes und sättigendes Hauptgericht.",
+    "textrezept": "Schneide die Oberseite der Paprika ab und entferne die Kerne. Erhitze etwas Öl in einer Pfanne und brate gehackte Zwiebeln und Knoblauch an, bis sie weich sind. Füge Hackfleisch hinzu und brate es, bis es durchgegart ist. Mische gekochten Reis, Tomatenmark, Salz, Pfeffer und Kräuter unter das Hackfleisch. Fülle die Paprika mit der Mischung und stelle sie in eine Auflaufform. Gieße etwas Gemüsebrühe in die Form und backe die Paprika bei 180°C für etwa 30-40 Minuten, bis sie weich sind. Serviere die gefüllten Paprika heiß, garniert mit frischen Kräutern.",
+    "zutaten": "4 Paprika, 200 g Hackfleisch, 1 Tasse gekochter Reis, 1 Zwiebel, 2 Knoblauchzehen, 2 EL Tomatenmark, 1 Tasse Gemüsebrühe, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6676a86a710f972384a1c10b" },
+    "namegericht": "Rindfleischeintopf",
+    "kohlenhydrate": "20",
+    "fette": "15",
+    "eiweiß": "30",
+    "kalorien": "350",
+    "textbeschreibung": "Ein herzhaftes und wärmendes Gericht, ideal für kühle Tage. Der Rindfleischeintopf ist reich an Geschmack und enthält zartes Fleisch und Gemüse.",
+    "textrezept": "Schneide das Rindfleisch in mundgerechte Stücke und brate es in einem großen Topf in etwas Öl an, bis es braun ist. Füge gehackte Zwiebeln, Knoblauch und Karotten hinzu und brate weiter, bis das Gemüse weich ist. Gieße Rinderbrühe in den Topf und füge Kartoffeln, Sellerie und Gewürze wie Lorbeerblätter, Thymian, Salz und Pfeffer hinzu. Lasse den Eintopf bei niedriger Hitze etwa 1-2 Stunden köcheln, bis das Fleisch zart ist. Serviere den Rindfleischeintopf heiß, garniert mit frischen Kräutern.",
+    "zutaten": "500 g Rindfleisch, 2 EL Olivenöl, 2 Zwiebeln, 2 Knoblauchzehen, 3 Karotten, 4 Kartoffeln, 2 Stangen Sellerie, 1 Liter Rinderbrühe, 2 Lorbeerblätter, 1 TL Thymian, Salz, Pfeffer, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6676a8b0710f972384a1c10e" },
+    "namegericht": "Schweinebraten",
+    "kohlenhydrate": "10",
+    "fette": "30",
+    "eiweiß": "40",
+    "kalorien": "450",
+    "textbeschreibung": "Ein traditioneller Schweinebraten, saftig und aromatisch, perfekt für besondere Anlässe oder als Sonntagsessen. Serviert mit einer kräftigen Soße.",
+    "textrezept": "Reibe den Schweinebraten gründlich mit Salz, Pfeffer, und gehacktem Knoblauch ein. Heize den Ofen auf 180°C vor und lege den Braten in eine feuerfeste Form. Brate den Schweinebraten etwa 1,5 bis 2 Stunden, wobei du ihn gelegentlich mit seinem eigenen Saft übergießt, damit er saftig bleibt. In den letzten 30 Minuten fügst du grob geschnittenes Gemüse wie Zwiebeln, Karotten und Kartoffeln hinzu. Nimm den Braten aus dem Ofen und lass ihn vor dem Anschneiden etwa 10 Minuten ruhen. Serviere den Schweinebraten mit dem gerösteten Gemüse und der Bratensoße.",
+    "zutaten": "1 kg Schweinebraten, 3 Knoblauchzehen, 2 Zwiebeln, 3 Karotten, 4 Kartoffeln, Salz, Pfeffer, 2 EL Olivenöl",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6676a8c2710f972384a1c10f" },
+    "namegericht": "Spaghetti",
+    "kohlenhydrate": "75",
+    "fette": "5",
+    "eiweiß": "15",
+    "kalorien": "350",
+    "textbeschreibung": "Ein klassisches italienisches Gericht, bestehend aus Spaghetti, die al dente gekocht und mit einer einfachen, aber aromatischen Tomatensoße serviert werden.",
+    "textrezept": "Koche die Spaghetti nach Packungsanweisung in reichlich Salzwasser, bis sie al dente sind. Erhitze in einer großen Pfanne etwas Olivenöl und brate gehackten Knoblauch und Zwiebeln an, bis sie weich sind. Füge passierte Tomaten hinzu und lasse die Soße bei mittlerer Hitze etwa 10-15 Minuten köcheln. Würze mit Salz, Pfeffer und getrocknetem Oregano. Gieße die gekochten Spaghetti ab und mische sie mit der Tomatensoße. Serviere die Spaghetti heiß, garniert mit frisch geriebenem Parmesan und Basilikum.",
+    "zutaten": "400 g Spaghetti, 2 EL Olivenöl, 2 Knoblauchzehen, 1 Zwiebel, 500 ml passierte Tomaten, Salz, Pfeffer, Oregano, Parmesan, Basilikum",
+    "inhalt": "1",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6676a8ce710f972384a1c110" },
+    "namegericht": "Spaghetti mit Fleischbällchen",
+    "kohlenhydrate": "80",
+    "fette": "20",
+    "eiweiß": "30",
+    "kalorien": "500",
+    "textbeschreibung": "Ein klassisches Gericht aus der italienisch-amerikanischen Küche, bestehend aus Spaghetti, serviert mit saftigen Fleischbällchen in einer herzhaften Tomatensoße.",
+    "textrezept": "Mische Hackfleisch mit gehackten Zwiebeln, Knoblauch, Eiern, Paniermehl, Salz, Pfeffer und italienischen Kräutern. Forme kleine Fleischbällchen und brate sie in einer Pfanne mit etwas Öl, bis sie rundum braun sind. Koche die Spaghetti nach Packungsanweisung. In derselben Pfanne wie die Fleischbällchen erhitze passierte Tomaten, füge Salz, Pfeffer und Kräuter hinzu und lasse die Soße köcheln. Gib die Fleischbällchen in die Tomatensoße und lasse sie etwa 10 Minuten köcheln. Gieße die Spaghetti ab und serviere sie mit den Fleischbällchen und der Soße, garniert mit Parmesan und Basilikum.",
+    "zutaten": "400 g Spaghetti, 500 g Hackfleisch, 1 Zwiebel, 2 Knoblauchzehen, 2 Eier, 50 g Paniermehl, 500 ml passierte Tomaten, Salz, Pfeffer, italienische Kräuter, 2 EL Olivenöl, Parmesan, Basilikum",
+    "inhalt": "3",
+    "ziel": "1",
+    "kalorienmenge": "1"
+},
+
+{
+    "_id": { "$oid": "6676a8eb710f972384a1c111" },
+    "namegericht": "Spargelcremesuppe",
+    "kohlenhydrate": "20",
+    "fette": "15",
+    "eiweiß": "5",
+    "kalorien": "200",
+    "textbeschreibung": "Eine cremige und delikate Suppe, zubereitet aus frischem Spargel, die sich ideal als Vorspeise oder leichtes Hauptgericht eignet.",
+    "textrezept": "Schäle den Spargel und schneide ihn in kleine Stücke. Koche ihn in Salzwasser, bis er weich ist, und püriere ihn anschließend mit etwas Kochwasser. Erhitze in einem Topf etwas Butter und brate gehackte Zwiebeln an, bis sie glasig sind. Füge das Spargelpüree hinzu und gieße mit Gemüsebrühe auf. Lasse die Suppe einige Minuten köcheln und füge dann Sahne hinzu. Würze mit Salz, Pfeffer und Muskatnuss. Serviere die Spargelcremesuppe heiß, garniert mit frischen Kräutern.",
+    "zutaten": "500 g Spargel, 1 Zwiebel, 2 EL Butter, 500 ml Gemüsebrühe, 200 ml Sahne, Salz, Pfeffer, Muskatnuss, frische Kräuter",
+    "inhalt": "1",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6676a8f8710f972384a1c112" },
+    "namegericht": "Tomatensuppe",
+    "kohlenhydrate": "15",
+    "fette": "10",
+    "eiweiß": "3",
+    "kalorien": "150",
+    "textbeschreibung": "Eine einfache und köstliche Tomatensuppe, perfekt für ein leichtes Mittagessen oder als Vorspeise. Die Suppe ist aromatisch und leicht zuzubereiten.",
+    "textrezept": "Erhitze etwas Olivenöl in einem Topf und brate gehackte Zwiebeln und Knoblauch an, bis sie weich sind. Füge gehackte Tomaten hinzu und lasse sie einige Minuten köcheln. Gieße Gemüsebrühe in den Topf und lasse die Suppe bei mittlerer Hitze etwa 20 Minuten köcheln. Püriere die Suppe mit einem Stabmixer, bis sie glatt ist. Würze mit Salz, Pfeffer und einer Prise Zucker. Serviere die Tomatensuppe heiß, garniert mit frischen Kräutern und einem Klecks Sahne.",
+    "zutaten": "1 kg Tomaten, 1 Zwiebel, 2 Knoblauchzehen, 2 EL Olivenöl, 500 ml Gemüsebrühe, Salz, Pfeffer, Zucker, frische Kräuter, Sahne",
+    "inhalt": "2",
+    "ziel": "2",
+    "kalorienmenge": "2"
+},
+
+{
+    "_id": { "$oid": "6676a903710f972384a1c113" },
+    "namegericht": "Würstchen mit Kartoffelbrei",
+    "kohlenhydrate": "40",
+    "fette": "20",
+    "eiweiß": "15",
+    "kalorien": "350",
+    "textbeschreibung": "Ein klassisches deutsches Gericht, bestehend aus gebratenen Würstchen und cremigem Kartoffelbrei. Ein einfaches und herzhaftes Essen für die ganze Familie.",
+    "textrezept": "Koche die Kartoffeln in Salzwasser, bis sie weich sind. Gieße das Wasser ab und zerstampfe die Kartoffeln mit etwas Butter und Milch, bis der Brei cremig ist. Würze mit Salz und Muskatnuss. Brate die Würstchen in einer Pfanne mit etwas Öl, bis sie goldbraun sind. Serviere die gebratenen Würstchen mit dem Kartoffelbrei und garniere nach Belieben mit frischen Kräutern.",
+    "zutaten": "500 g Kartoffeln, 4 Würstchen, 2 EL Butter, 100 ml Milch, 1 EL Öl, Salz, Muskatnuss, frische Kräuter",
+    "inhalt": "3",
+    "ziel": "2",
+    "kalorienmenge": "1"
+}
+]
