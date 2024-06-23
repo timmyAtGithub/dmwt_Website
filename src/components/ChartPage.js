@@ -1,6 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import { useRouter } from 'next/router';
+import styles from '../styles/ChartPage.module.css';
 
 const ChartPage = ({ data }) => {
   const COLORS = ["rgba(210, 4, 45, 0.6)", "rgba(170, 255, 0, 0.6)", "rgba(125, 249, 255, 0.6)"];
@@ -16,18 +17,18 @@ const ChartPage = ({ data }) => {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>Kalorien</h1>
       <h2>Gesamtkalorien: {totalCalories.toFixed(2)} kcl</h2> 
-      <div className="CalCul">
+      <div className={styles.CalCul}>
         <PieChart width={400} height={400}>
           <Pie
             dataKey="value"
-            isAnimationActive={false}
+            isAnimationActive={true}
             data={data}
-            cx={200}
-            cy={200}
-            outerRadius={80}
+            cx="50%"
+            cy="50%"
+            outerRadius={150}
             label={formatLabel}
           >
             {data.map((entry, index) => (
@@ -42,7 +43,7 @@ const ChartPage = ({ data }) => {
           <Tooltip formatter={(value, name, props) => [`${props.payload.name}: ${value.toFixed(2)} Kalorien`, ""]} /> 
         </PieChart>
       </div>
-      <button onClick={navigateToMeals}>Zu den Mahlzeiten</button>
+      <button className={styles.button} onClick={navigateToMeals}>Zu den Mahlzeiten</button>
     </div>
   );
 };
