@@ -92,7 +92,7 @@ const InputPage = ({ setData, setLoading }) => {
     setTimeout(async () => {
       try {
         const sessionToken = crypto.randomBytes(64).toString('hex');
-        const sessionData = { token: sessionToken, macroData };
+        const sessionData = { token: sessionToken, macroData, gewicht: gewichtValue };
 
         localStorage.setItem('sessionToken', JSON.stringify(sessionData));
 

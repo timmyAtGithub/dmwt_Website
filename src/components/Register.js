@@ -17,6 +17,7 @@ const Register = () => {
       // Sitzungstoken und Daten abrufen
       const sessionData = JSON.parse(localStorage.getItem('sessionToken'));
       const macroData = sessionData.macroData;
+      const gewicht = sessionData.gewicht;
 
       // Daten speichern
       await axios.post('/api/saveCaloriesData', {
@@ -25,6 +26,13 @@ const Register = () => {
         protein: macroData.find(item => item.name === 'Proteine').value,
         fat: macroData.find(item => item.name === 'Fette').value,
         carbs: macroData.find(item => item.name === 'Kohlenhydrate').value
+      });
+
+      // Gewicht speichern
+      await axios.post('/api/saveWeightData', {
+        userId,
+        weight: gewicht,
+        date: new Date().toISOString()
       });
 
       alert('Registrierung erfolgreich und Daten gespeichert');

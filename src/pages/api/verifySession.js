@@ -1,21 +1,37 @@
-import { parse } from 'cookie';
-import { getSessionData } from '../../utils/sessionStore';
+import dbConnect from '../../utils/dbConnect';
 
 export default async function handler(req, res) {
-  const { cookies } = req;
-  const { sessionToken } = cookies;
+  if (req.method === 'GET') {
+    const { sessionToken } = req.cookies;
 
-  console.log("Cookies received by server:", cookies);
-  console.log("Session Token:", sessionToken);
+    if (!sessionToken) {
+      return res.status(401).json({ error: 'No session token found' });
+    }
 
-  if (!sessionToken) {
-    return res.status(401).json({ error: 'Not authenticated' });
-  }
+    try {
+      const client = await dbConnect();
+      const db = client.db('User');
+      const sessionsCollection = db.collection('sessions');
 
-  const sessionData = getSessionData(sessionToken);
-  if (sessionData) {
-    res.status(200).json({ name: sessionData.name });
+      const session = await sessionsCollection.findOne({ sessionToken });
+
+      if (!session) {
+        return res.status(401).json({ error: 'Invalid session token' });
+      }
+
+      const usersCollection = db.collection('users');
+      const user = await usersCollection.findOne({ userId: session.userId });
+
+      if (!user) {
+        return res.status(401).json({ error: 'User not found' });
+      }
+
+      res.status(200).json(user);
+    } catch (error) {
+      console.error('Error verifying session:', error);
+      res.status(500).json({ error: 'Server error' });
+    }
   } else {
-    res.status(401).json({ error: 'Invalid session token' });
+    res.status(405).json({ error: 'Method not allowed' });
   }
 }

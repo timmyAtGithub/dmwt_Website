@@ -5,28 +5,22 @@ const client = new MongoClient(uri);
 
 async function handler(req, res) {
   if (req.method === 'POST') {
-    const { userId, calories, protein, fat, carbs } = req.body;
+    const { userId, weight, date } = req.body;
 
     try {
       await client.connect();
       const database = client.db('User');
-      const caloriesEatenCollection = database.collection('calories');
+      const weightCollection = database.collection('weight');
 
-      const caloriesEatenData = {
+      const weightData = {
         userId,
-        calories,
-        protein,
-        fat,
-        carbs,
+        weight,
+        date: new Date(date) // Ensure the date is stored as a Date object
       };
 
-      await caloriesEatenCollection.updateOne(
-        { userId },
-        { $set: caloriesEatenData },
-        { upsert: true }
-      );
+      await weightCollection.insertOne(weightData);
 
-      res.status(201).json({ message: 'Data saved successfully' });
+      res.status(201).json({ message: 'Weight data saved successfully' });
     } catch (error) {
       console.error('Error connecting to the database:', error);
       res.status(500).json({ error: 'Internal Server Error' });

@@ -2,7 +2,7 @@ import dbConnect from '../../utils/dbConnect';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { serialize } from 'cookie';
-import { addSessionToken } from '../../utils/sessionStore';
+import { addSessionToken } from '../../utils/addSessionToken';
 
 function hashEmail(email) {
   return crypto.createHash('sha256').update(email).digest('hex');
@@ -11,6 +11,10 @@ function hashEmail(email) {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
 
     try {
       console.log("Connecting to database...");
@@ -38,24 +42,20 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Invalid email or password' });
       }
 
-      
       const usersCollection = db.collection('users');
-      const user = await usersCollection.findOne({ userid: userLogin.userid });
+      const user = await usersCollection.findOne({ userId: userLogin.userId });
       if (!user) {
         console.log("User not found in users collection");
         return res.status(400).json({ error: 'User not found' });
       }
 
       const sessionToken = crypto.randomBytes(64).toString('hex');
-      const sessionData = { token: sessionToken, user };
-
-      
-      addSessionToken(sessionToken, sessionData);
+      await addSessionToken(sessionToken, userLogin.userId);
 
       res.setHeader('Set-Cookie', serialize('sessionToken', sessionToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        maxAge: 60 * 60 * 24 * 7, 
+        maxAge: 60 * 60 * 24 * 7,
         sameSite: 'strict',
         path: '/',
       }));
