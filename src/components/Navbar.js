@@ -5,7 +5,7 @@ import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const verifySession = async () => {
@@ -20,16 +20,11 @@ const Navbar = () => {
     verifySession();
   }, []);
 
-  const handleUserClick = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
-
   const handleLogout = async () => {
     try {
       await axios.post('/api/logout', {}, { withCredentials: true });
       setUser(null);
-      setDropdownVisible(false);
-      window.location.reload(); // Optional: Refresh the page after logout
+      window.location.reload();
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -47,12 +42,12 @@ const Navbar = () => {
           </a>
         </Link>
       </div>
-      <div className={styles.userSection} onClick={handleUserClick}>
+      <div className={styles.userSection} onClick={() => setShowDropdown(!showDropdown)}>
         {user ? (
           <>
             <span>{user.vorname}</span>
             <img src="/images/profilePic.jpg" alt="User" className={styles.userImage} />
-            {dropdownVisible && (
+            {showDropdown && (
               <div className={styles.dropdown}>
                 <img src="/images/profilePic.jpg" alt="User" className={styles.dropdownImage} />
                 <span>{user.vorname}</span>

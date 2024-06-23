@@ -19,7 +19,6 @@ const Dashboard = () => {
         console.error('Session verification failed:', error);
       }
     };
-
     const reloaded = localStorage.getItem('reloaded');
     if (!reloaded) {
       localStorage.setItem('reloaded', 'true');

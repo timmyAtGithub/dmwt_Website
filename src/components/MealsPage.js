@@ -4,13 +4,18 @@ import imageMapping from '../utils/imageMapping';
 import { useRouter } from 'next/router';
 import styles from '../styles/MealsPage.module.css';
 
-const Modal = ({ dish, onClose }) => {
+const Modal = ({ dish, onClose, onEatToday }) => {
   return (
     <div className={styles.modal} onClick={onClose}>
       <img className={styles.modalImg} src={dish.imageUrl} alt={dish.namegericht} />
       <div className={styles.modalText}>
         <h2>{dish.namegericht}</h2>
         <p>{dish.textbeschreibung}</p>
+        <p>Kohlenhydrate: {dish.kolenhydrate}g</p>
+        <p>Fette: {dish.fette}g</p>
+        <p>Eiweiß: {dish.eiweiß}g</p>
+        <p>Kalorien: {dish.kalorien}kcal</p>
+        <button onClick={onEatToday}>Heute gegessen</button>
       </div>
     </div>
   );
@@ -71,6 +76,7 @@ const MealsPage = () => {
         console.error('Error fetching meals:', error);
       }
     };
+    
 
     const verifySession = async () => {
       try {
@@ -93,11 +99,34 @@ const MealsPage = () => {
     setSelectedDish(null);
   };
 
+  const handleEatToday = async () => {
+    if (!selectedDish || !user) return;
+
+    const { kolenhydrate, eiweiß, fette, kalorien } = selectedDish;
+
+    try {
+      await axios.post('/api/eatToday', {
+        userId: user.userId,  // Ensure correct user ID is used here
+        carbs: parseFloat(kolenhydrate),
+        protein: parseFloat(eiweiß),
+        fat: parseFloat(fette),
+        calories: parseFloat(kalorien),
+      });
+      alert('Kalorien hinzugefügt!');
+      handleCloseModal();
+    } catch (error) {
+      console.error('Error adding calories:', error);
+      alert('Fehler beim Hinzufügen der Kalorien.');
+    }
+  };
+
   return (
     <div className={styles.app} style={{ overflow: user ? 'auto' : 'hidden', minHeight: '100vh' }}>
       <DishList dishes={meals} onDishClick={handleDishClick} />
       {!user && <RegisterBar />}
-      {selectedDish && <Modal dish={selectedDish} onClose={handleCloseModal} />}
+      {selectedDish && (
+        <Modal dish={selectedDish} onClose={handleCloseModal} onEatToday={handleEatToday} />
+      )}
       {selectedDish && <div className={styles.backdropBlur} onClick={handleCloseModal}></div>}
     </div>
   );
