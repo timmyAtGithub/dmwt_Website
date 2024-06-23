@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import styles from '../styles/ChartPage.module.css';
 
 const ChartPage = ({ data }) => {
-  const COLORS = ["rgba(210, 4, 45, 0.6)", "rgba(170, 255, 0, 0.6)", "rgba(125, 249, 255, 0.6)"];
-  const BORDER_COLORS = ["rgba(255, 0, 0, 1)", "rgba(0, 255, 0, 1)", "rgba(0, 0, 255, 1)"];
+  const COLORS = ["#aa0000", "#aaaa00", "#0000aa"];
+  const BORDER_COLORS = ["#000000", "#000000", "#000000"];
   const router = useRouter();
 
   const totalCalories = data.reduce((acc, item) => acc + item.value, 0);
@@ -21,7 +21,7 @@ const ChartPage = ({ data }) => {
       <h1>Kalorien</h1>
       <h2>Gesamtkalorien: {totalCalories.toFixed(2)} kcl</h2> 
       <div className={styles.CalCul}>
-        <PieChart width={400} height={400}>
+        <PieChart width={1000} height={400}>
           <Pie
             dataKey="value"
             isAnimationActive={true}
@@ -29,7 +29,25 @@ const ChartPage = ({ data }) => {
             cx="50%"
             cy="50%"
             outerRadius={150}
-            label={formatLabel}
+            labelLine={false} // Optionally disable label lines if they interfere with labels
+            label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name }) => {
+              const RADIAN = Math.PI / 180;
+              const radius = 0.9 * innerRadius + 1.2 * outerRadius;
+              const x = cx + radius * Math.cos(-midAngle * RADIAN);
+              const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+              return (
+                <text
+                  x={x}
+                  y={y}
+                  fill="#fff" // Adjust label text color as needed
+                  textAnchor={x > cx ? "start" : "end"}
+                  dominantBaseline="central"
+                >
+                  {`${name} ${(percent * 100).toFixed(2)}%`}
+                </text>
+              );
+            }}
           >
             {data.map((entry, index) => (
               <Cell
