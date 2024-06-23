@@ -1,36 +1,52 @@
+.backgroundbody {
+  background-image: url('../../public/images/orange.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Mindesthöhe des Hintergrunds auf die gesamte Bildschirmhöhe setzen */
+}
+
 .container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-   background-color: #444;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .input {
-    width: 100%;
-    background-color: #333;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-    font-size: 16px;
-    border: 1px solid #333;
-    border-radius: 5px;
-  }
-  
-  .button {
-    background-color: #aa0000;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    margin-top: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #cc0000;
-  }
+  max-width: 400px;
+  margin: auto; /* Automatisches Zentrieren horizontal */
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  position: relative; /* Position relativ für zentriertes Display */
+  /* Positionierung in der Mitte */
+  transform: translateY(20%); /* Anpassen der vertikalen Ausrichtung */
+}
+
+.noScroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+.input {
+  width: calc(100% - 20px); /* Breite abzüglich des inneren Abstands */
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #fff; /* Weiße Textfarbe */
+}
+
+.button {
+  background-color: #aa0000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #cc0000;
+}

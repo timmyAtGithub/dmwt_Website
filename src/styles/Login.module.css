@@ -2,8 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  border: black;
+  height: 100vh; /* Vollständige Bildschirmhöhe */
+  background-image: url('../../public/images/essen.jpg'); 
+  background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Container bedeckt */
+  background-position: center; /* Zentriert das Bild im Container */
   overflow: hidden;
 }
 
@@ -31,7 +33,6 @@
   font-size: 32px;
   color: white;
   text-align: center;
-
   margin-bottom: 10px;
 }
 
@@ -45,7 +46,7 @@
 
 .loginContainer {
   width: 500px;
-  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.6); /* Hintergrundfarbe mit Transparenz für bessere Lesbarkeit */
   color: white;
   padding: 20px;
   text-align: center;
@@ -70,7 +71,7 @@
   margin-bottom: 10px;
   border: 0px solid #ccc;
   border-radius: 8px;
-  text-align:center;
+  text-align: center;
   font-size: 16px;
 }
 

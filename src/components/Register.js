@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../styles/Register.module.css'; // Separate CSS module for styling
@@ -44,39 +44,45 @@ const Register = () => {
       alert('Fehler bei der Registrierung');
     }
   };
+  useEffect(() => {
+    document.body.classList.add(styles.noScroll);
+   
+  }, []);
 
   return (
-    <div className={styles.container} style={{ marginBottom: '20px' }}>
-      <h1>Registriere dich JETZT!</h1>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        className={styles.input}
-      />
-      <input
-        type="password"
-        placeholder="Passwort"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        className={styles.input}
-      />
-      <input
-        type="text"
-        placeholder="Vorname"
-        value={vorname}
-        onChange={e => setVorname(e.target.value)}
-        className={styles.input}
-      />
-      <input
-        type="text"
-        placeholder="Nachname"
-        value={nachname}
-        onChange={e => setNachname(e.target.value)}
-        className={styles.input}
-      />
-      <button onClick={handleRegister} className={styles.button}>Registrieren</button>
+    <div className={styles.backgroundbody} style={{ overflow: 'hidden' }}>
+      <div className={styles.container}>
+        <h1>Registriere dich JETZT!</h1>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className={styles.input}
+        />
+        <input
+          type="password"
+          placeholder="Passwort"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          placeholder="Vorname"
+          value={vorname}
+          onChange={e => setVorname(e.target.value)}
+          className={styles.input}
+        />
+        <input
+          type="text"
+          placeholder="Nachname"
+          value={nachname}
+          onChange={e => setNachname(e.target.value)}
+          className={styles.input}
+        />
+        <button onClick={handleRegister} className={styles.button}>Registrieren</button>
+      </div>
     </div>
   );
 };

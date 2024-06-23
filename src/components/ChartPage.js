@@ -12,6 +12,7 @@ const ChartPage = ({ data }) => {
   const totalCalories = data.reduce((acc, item) => acc + item.value, 0);
 
   useEffect(() => {
+    document.body.classList.add(styles.noScroll);
     setIsClient(true); // Marking component as client-side rendered
   }, []);
 
@@ -20,8 +21,8 @@ const ChartPage = ({ data }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1>Kalorien</h1>
+    <div className={`${styles.container} ${styles.backgroundImage}`}>
+      <h1>Deine Kalorien</h1>
       <div className={styles.CalCul}>
         {isClient && ( // Render chart only on client side to avoid SSR issues
           <PieChart width={650} height={400}>
