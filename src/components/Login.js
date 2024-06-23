@@ -9,6 +9,7 @@ const Login = ({ setUser }) => {
   const router = useRouter();
 
   useEffect(() => {
+    document.body.classList.add(styles.noScroll);
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
