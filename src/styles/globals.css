@@ -7,6 +7,9 @@ body {
     background-color: #121212; /* Dark background color */
     color: #ffffff; /* Light text color */
     font-family: 'Arial', sans-serif;
+    padding-top: 80px; /* Höhe der Navbar plus etwas zusätzlichen Platz */
+    background-color: #202020; /* Hintergrundfarbe anpassen */
+  
   }
   
   a {

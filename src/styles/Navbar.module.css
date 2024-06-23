@@ -1,10 +1,15 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     background-color: #333;
     color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px; /* Adding some space below the navbar */
+    z-index: 1000;
   }
   
   .logo img {
@@ -13,18 +18,18 @@
   
   .menu {
     display: flex;
+    align-items: center;
   }
   
   .menuItem {
-    color: white;
     margin: 0 10px;
+    color: white;
     text-decoration: none;
   }
   
   .userSection {
     display: flex;
     align-items: center;
-    position: relative;
     cursor: pointer;
   }
   
@@ -34,31 +39,23 @@
     border-radius: 50%;
     margin-left: 10px;
     object-fit: cover;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
   }
   
   .userImage:hover {
     transform: scale(1.1);
   }
   
-  .loginButton {
-    color: white;
-    text-decoration: none;
-  }
-  
   .dropdown {
     position: absolute;
-    top: 60px; /* Adjust this value to position the dropdown correctly */
-    right: 0;
+    top: 60px;
+    right: 20px;
     background-color: #444;
     color: white;
-    border-radius: 8px;
     padding: 10px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure the dropdown is above other elements */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    z-index: 1001;
   }
   
   .dropdownImage {
@@ -70,15 +67,29 @@
   }
   
   .logoutButton {
-    background-color: #ff4b4b;
+    background-color: #f00;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .logoutButton:hover {
-    background-color: #ff0000;
+    background-color: #c00;
+  }
+  
+  .loginButton {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
   
