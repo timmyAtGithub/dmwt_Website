@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../styles/Login.module.css'; // Hinweis: Verwende .module.css
@@ -7,6 +7,22 @@ const Login = ({ setUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    const verifySession = async () => {
+      try {
+        const response = await axios.get('/api/verifySession', { withCredentials: true });
+        if (response.data) {
+          setUser(response.data);
+          router.push('/dashboard');
+        }
+      } catch (error) {
+        console.error('No existing session found:', error);
+      }
+    };
+
+    verifySession();
+  }, [router, setUser]);
 
   const handleLogin = async () => {
     try {
