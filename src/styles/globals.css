@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #121212; /* Dark background color */
+    background-color: #202020; /* Dark background color */
     color: #ffffff; /* Light text color */
     font-family: 'Arial', sans-serif;
     padding-top: 80px; /* Höhe der Navbar plus etwas zusätzlichen Platz */

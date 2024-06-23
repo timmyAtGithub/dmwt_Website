@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   const [user, setUser] = useState(null);
