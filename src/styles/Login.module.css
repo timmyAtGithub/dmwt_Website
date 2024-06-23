@@ -2,11 +2,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Vollständige Bildschirmhöhe */
-  background-image: url('../../public/images/essen.jpg'); 
-  background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Container bedeckt */
-  background-position: center; /* Zentriert das Bild im Container */
+  height: 100vh;
+  background-image: url('../../public/images/essen.jpg'); /* Hier ist das Hintergrundbild */
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Hier wird die Transparenz auf das Hintergrundbild angewendet */
   overflow: hidden;
+}
+
+.loginWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Hier die Transparenz anpassen */
+}
+
+.noScroll {
+  overflow: hidden;
+  height: 100%;
 }
 
 .cssFont_1 {
