@@ -1,0 +1,10 @@
+.exerciseList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

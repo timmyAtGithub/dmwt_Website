@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils, faHome, faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
@@ -36,9 +38,19 @@ const Navbar = () => {
         <img src="/images/Logo.png" alt="Logo" />
       </div>
       <div className={styles.menu}>
+        <Link href="/meals" legacyBehavior>
+          <a className={styles.menuItem}>
+            <FontAwesomeIcon icon={faUtensils} />
+          </a>
+        </Link>
         <Link href="/" legacyBehavior>
           <a className={styles.menuItem}>
-            <i className="fas fa-home"></i>
+            <FontAwesomeIcon icon={faHome} />
+          </a>
+        </Link>
+        <Link href="/exercises" legacyBehavior>
+          <a className={styles.menuItem}>
+            <FontAwesomeIcon icon={faDumbbell} />
           </a>
         </Link>
       </div>
