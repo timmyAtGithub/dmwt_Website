@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 import styles from '../styles/MealsPage.module.css';
 
 const Modal = ({ dish, onClose, onEatToday }) => {
+  const imageUrl = imageMapping[dish._id] ? `/images/${imageMapping[dish._id]}` : '/images/default.jpeg';
   return (
     <div className={styles.modal} onClick={onClose}>
-      <img className={styles.modalImg} src={dish.imageUrl} alt={dish.namegericht} />
+      <img className={styles.modalImg} src={imageUrl} alt={dish.namegericht} />
       <div className={styles.modalText}>
         <h2>{dish.namegericht}</h2>
         <p>{dish.textbeschreibung}</p>
@@ -20,6 +21,9 @@ const Modal = ({ dish, onClose, onEatToday }) => {
     </div>
   );
 };
+
+
+
 
 const Dish = ({ dish, onClick }) => {
   const imageUrl = imageMapping[dish._id] ? `/images/${imageMapping[dish._id]}` : '/images/default.jpeg';

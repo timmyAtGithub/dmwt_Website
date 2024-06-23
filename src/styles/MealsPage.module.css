@@ -120,11 +120,41 @@
     max-width: 90%;
     max-height: 90%;
     overflow: auto;
+    display: flex;
+    flex-direction: row; /* Nebeneinander anordnen */
+    gap: 20px; /* Abstand zwischen Bild und Text */
+}
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row; /* Nebeneinander anordnen */
+    gap: 20px; /* Abstand zwischen Bild und Text */
 }
 
 .modalImg {
-    width: 100%;
+    /* Maximalbreite des Bildes */
+    height: 400px;
+    width: 400px;
     border-radius: 10px;
+}
+
+.modalText {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .modalText {
