@@ -1,0 +1,30 @@
+/* Exercise.module.css */
+.exercise {
+    position: relative;
+    width: 300px;
+    margin: 10px;
+  }
+  
+  .exerciseImg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .exerciseDetails {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    width: calc(100% - 20px); /* To ensure the text fits within the image */
+  }
+  
+  .exerciseDetails h2 {
+    margin: 0;
+    font-size: 16px;
+    color: white; /* Ensure the text color is white */
+  }
+  

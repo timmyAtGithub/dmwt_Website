@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
+import '../lib/fontawesome';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/globals.css';

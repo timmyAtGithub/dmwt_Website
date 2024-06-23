@@ -5,6 +5,7 @@ import styles from '../styles/MealsPage.module.css';
 import DishList from './DishList';
 import RegisterBar from './RegisterBar';
 import Modal from './Modal';
+import Filter from './Filter';
 
 const MealsPage = () => {
   const [meals, setMeals] = useState([]);
@@ -127,32 +128,12 @@ const MealsPage = () => {
 
   return (
     <div className={`${styles.app}`}>
-      <div className={styles.filterContainer}>
-        <select name="inhalt" onChange={handleFilterChange}>
-          <option value="">Inhalt</option>
-          <option value="1">Vegetarisch</option>
-          <option value="2">Vegan</option>
-          <option value="3">Mit Fleisch</option>
-        </select>
-        <select name="kalorienmenge" onChange={handleFilterChange}>
-          <option value="">Kalorienmenge</option>
-          <option value="1">Viele Kalorien</option>
-          <option value="2">Wenige Kalorien</option>
-        </select>
-        <select name="ziel" onChange={handleFilterChange}>
-          <option value="">Ziel</option>
-          <option value="1">Muskelaufbau</option>
-          <option value="2">Abnehmen</option>
-        </select>
-        <label>
-          <input
-            type="checkbox"
-            checked={showFavoritesOnly}
-            onChange={handleShowFavoritesOnlyChange}
-          />
-          Nur Favoriten anzeigen
-        </label>
-      </div>
+      <Filter
+        filters={filters}
+        onFilterChange={handleFilterChange}
+        showFavoritesOnly={showFavoritesOnly}
+        onShowFavoritesOnlyChange={handleShowFavoritesOnlyChange}
+      />
       <DishList 
         dishes={filteredMeals} 
         favorites={favorites} 

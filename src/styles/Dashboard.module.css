@@ -1,12 +1,22 @@
 .dashboardContainer {
+  background-color: #1b1b1b; /* Hintergrundfarbe des Dashboards */
+  color: #333; /* Textfarbe des Dashboards */
   padding: 20px;
+  border-radius: 8px;
 }
 
 .dashboardContent {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
+.dashboard-section {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .dashboardContent.blur {
   filter: blur(5px);
 }
@@ -31,7 +41,7 @@
 }
 
 .weightTrackerBigContainer {
-  background: white; /* Ensure the input form has a proper background */
+  background: #333; /* Ensure the input form has a proper background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -48,7 +58,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
+  background: #333;
   border: none;
   font-size: 20px;
   cursor: pointer;
