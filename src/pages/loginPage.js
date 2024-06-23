@@ -1,10 +1,12 @@
+// pages/loginPage.js
 import Login from "@/components/Login";
 
-const loginPage = () => {
-    return(
+const LoginPage = ({ setUser }) => {
+  return (
     <div>
-        <Login/>
+      <Login setUser={setUser} />
     </div>
-    );
+  );
 };
-export default loginPage;
+
+export default LoginPage;

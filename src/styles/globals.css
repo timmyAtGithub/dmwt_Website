@@ -1,0 +1,151 @@
+/* globals.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menuItem {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 24px;
+  }
+  
+  .userSection {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .loginButton {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .userImage {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .weightTrackerContainer {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .weightTrackerSmall {
+    cursor: pointer;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .weightTrackerBigOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(169, 169, 169, 0.8); /* Transparent dark grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .weightTrackerBigContainer {
+    background: white; /* Ensure the input form has a proper background */
+    padding: 20px;
+    border-radius: 45px;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    max-width: 95%; /* Increase the width */
+    width: 80%; /* Set the width */
+    height: 80%; /* Set the height */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .closeButton {
+    position: fixed; /* Use fixed position to place it at the top right of the viewport */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it is above other elements */
+  }
+  
+  .weightInputForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px; /* Add some space between the chart and the input form */
+  }
+  
+  .weightInputForm input {
+    margin-bottom: 10px;
+    text-align: center; /* Center the text inside the input */
+  }
+  
+  .weightChart {
+    flex-grow: 1; /* Make the chart take up the remaining space */
+    margin-right: 20px;
+    height: 90%;
+  }
+  
+  .blurBackground {
+    filter: blur(5px);
+  }
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  

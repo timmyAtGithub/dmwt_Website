@@ -1,10 +1,12 @@
-// src/pages/dashboard.js
 import Dashboard from '../components/Dashboard';
+import CountCalories from '../components/CountCalories';
 
-export default function DashboardPage() {
+const DashboardPage = ({ userId }) => {
   return (
     <div>
       <Dashboard />
     </div>
   );
-}
+};
+
+export default DashboardPage;
