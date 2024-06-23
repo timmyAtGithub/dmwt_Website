@@ -1,48 +1,41 @@
 .loginWrapper {
   display: flex;
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-  height: 100vh; /* Vollständige Höhe des Viewports nutzen */
-}
-
-.cssFont_1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 60px; /* Größere Schrift für die Überschrift */
-  letter-spacing: 0px;
-  word-spacing: 0px;
-  color: #b80000;
-  font-weight: bold;
-  font-style: oblique;
-  font-variant: normal;
-  text-transform: none;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2); /* Textschatten für den 3D-Effekt */
-  margin-top: -20px; /* Negative Margin, um die Höhe anzupassen */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333; /* Dark background color */
 }
 
 .loginInfo {
-  width: 300px; /* Breite für Info-Bereich */
+  width: 300px;
   padding: 20px;
+  color: #ffffff;
 }
 
 .loginHeading {
-  font-size: 32px; /* Schriftgröße für die Überschrift */
+  font-size: 32px;
+  color: white;
+  text-align: center;
+
   margin-bottom: 10px;
-  margin-top: -10px; /* Negative Margin, um nach oben zu versetzen */
 }
 
 .loginText {
-  font-size: 24px; /* Größere Schrift für den Text */
-  color: #666;
+  font-size: 24px;
+  color: #ffffff; 
+  font-style: italic;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .loginContainer {
-  width: 300px; /* Oder eine Breite deiner Wahl für den Login-Kasten */
-  background-color: #f0f0f0; /* Beispielhafte Hintergrundfarbe */
-  color: black;
+  width: 500px;
+  background-color: #444;
+  color: white;
   padding: 20px;
+  text-align: center;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Beispielhafter Schatten */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .loginForm {
@@ -56,25 +49,28 @@
 }
 
 .loginInput {
+  background-color: #333;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 8px;
+  text-align:center;
   font-size: 16px;
 }
 
 .loginButton {
   width: 100%;
   padding: 10px;
-  background-color: #0070f3; /* Beispielhafte Button-Farbe */
-  color: black;
+  background-color: #aa0000; 
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .loginButton:hover {
-  background-color: #0054b8; /* Beispielhafte Farbe für Hover */
+  background-color: #cc0000;
 }
