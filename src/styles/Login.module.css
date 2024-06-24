@@ -74,10 +74,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  
 }
 
 .inputContainer {
   width: 100%;
+  z-index: 10;
 }
 
 .loginInput {
@@ -89,6 +92,7 @@
   border-radius: 8px;
   text-align: center;
   font-size: 16px;
+  
 }
 
 .loginButton {
@@ -101,6 +105,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  z-index: 10; 
 }
 
 .loginButton:hover {

@@ -2,21 +2,20 @@
   background-image: url('../../public/images/orange.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh; /* Mindesthöhe des Hintergrunds auf die gesamte Bildschirmhöhe setzen */
+  min-height: 100vh; /* Set the minimum height of the background to the full screen height */
 }
 
 .container {
   max-width: 400px;
-  margin: auto; /* Automatisches Zentrieren horizontal */
+  margin: auto; /* Automatically center horizontally */
   text-align: center;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  position: relative; /* Position relativ für zentriertes Display */
-  /* Positionierung in der Mitte */
-  transform: translateY(20%); /* Anpassen der vertikalen Ausrichtung */
+  position: relative; /* Relative position for centered display */
+  transform: translateY(20%); /* Adjust vertical alignment */
 }
 
 .noScroll {
@@ -25,14 +24,14 @@
 }
 
 .input {
-  width: calc(100% - 20px); /* Breite abzüglich des inneren Abstands */
+  width: calc(100% - 20px); /* Width minus the inner padding */
   background-color: #333;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid #333;
   border-radius: 5px;
-  color: #fff; /* Weiße Textfarbe */
+  color: #fff; /* White text color */
 }
 
 .button {
@@ -49,4 +48,24 @@
 
 .button:hover {
   background-color: #cc0000;
+}
+
+/* Mobile Version */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Adjust the max-width for mobile */
+    padding: 15px; /* Reduce padding for mobile */
+    transform: translateY(10%);
+    padding-top: 70px; /* Adjust vertical alignment for mobile */
+  }
+
+  .input {
+    font-size: 14px; /* Slightly smaller font size for mobile */
+    padding: 8px; /* Reduce padding for mobile */
+  }
+
+  .button {
+    font-size: 16px; /* Slightly smaller font size for mobile */
+    padding: 8px 16px; /* Reduce padding for mobile */
+  }
 }

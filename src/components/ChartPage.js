@@ -4,16 +4,30 @@ import { useRouter } from 'next/router';
 import styles from '../styles/ChartPage.module.css';
 
 const ChartPage = ({ data }) => {
-  const COLORS = ["#e9967a", "#d2b48c", "#00a0aa"];
-  const BORDER_COLORS = ["#333", "#333", "#333"];
+  const COLORS = ["#39CEF3", "#72CA3D", "#FF4906"];
+  const BORDER_COLORS = ["Transparent", "Transparent", "Transparent"];
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
+  const [chartDimensions, setChartDimensions] = useState({ width: 650, height: 400 });
 
   const totalCalories = data.reduce((acc, item) => acc + item.value, 0);
 
   useEffect(() => {
     document.body.classList.add(styles.noScroll);
     setIsClient(true); // Marking component as client-side rendered
+
+    const updateChartDimensions = () => {
+      if (window.innerWidth <= 768) {
+        setChartDimensions({ width: 300, height: 300 });
+      } else {
+        setChartDimensions({ width: 650, height: 400 });
+      }
+    };
+
+    updateChartDimensions();
+    window.addEventListener('resize', updateChartDimensions);
+
+    return () => window.removeEventListener('resize', updateChartDimensions);
   }, []);
 
   const navigateToMeals = () => {
@@ -25,15 +39,15 @@ const ChartPage = ({ data }) => {
       <h1>Deine Kalorien</h1>
       <div className={styles.CalCul}>
         {isClient && ( // Render chart only on client side to avoid SSR issues
-          <PieChart width={650} height={400}>
+          <PieChart width={chartDimensions.width} height={chartDimensions.height}>
             {/* Outer Pie */}
             <Pie
               data={data}
               dataKey="value"
               cx="50%"
               cy="50%"
-              innerRadius={100} // Inner radius of the outer ring
-              outerRadius={150} // Outer radius of the outer ring
+              innerRadius={chartDimensions.width / 4} // Inner radius of the outer ring
+              outerRadius={chartDimensions.width / 3.5} // Outer radius of the outer ring
               fill="#8884d8" // Color of the outer ring
               labelLine={false} // Optional: Disable label lines if they interfere
               label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name }) => {
@@ -42,6 +56,13 @@ const ChartPage = ({ data }) => {
                 const x = cx + radius * Math.cos(-midAngle * RADIAN);
                 const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
+                let grams = 0;
+                if (name === 'Proteine' || name === 'Kohlenhydrate') {
+                  grams = (totalCalories / 4) * (percent);
+                } else {
+                  grams = (totalCalories / 9) * (percent);
+                }
+
                 return (
                   <text
                     x={x}
@@ -49,8 +70,9 @@ const ChartPage = ({ data }) => {
                     fill="#fff"
                     textAnchor={x > cx ? "start" : "end"}
                     dominantBaseline="central"
+                    fontSize={window.innerWidth <= 768 ? 12 : 16}
                   >
-                    {`${name} ${(percent * 100).toFixed(2)}%`}
+                    {`${name} ${grams.toFixed(0)}g`}
                   </text>
                 );
               }}
@@ -69,17 +91,17 @@ const ChartPage = ({ data }) => {
               data={[{ name: 'Inner', value: 100 }]}
               cx="50%"
               cy="50%"
-              innerRadius={0} 
-              outerRadius={100} 
-              fill="#333" 
+              innerRadius={0}
+              outerRadius={chartDimensions.width / 2}
+              fill="Transparent"
             >
-              <Cell strokeWidth={0} /> 
+              <Cell strokeWidth={0} />
             </Pie>
 
-            <text x="50%" y="50%" textAnchor="middle" dy={20} className={styles.totalCaloriesText}>{totalCalories.toFixed(2)} kcl</text>
-            <text x="50%" y="50%" textAnchor="middle" dy={-10} className={styles.totalCaloriesLabel}>Gesamtkalorien</text>
+            <text x="50%" y="50%" textAnchor="middle" dy={20} fill="#fff" className={styles.totalCaloriesText}>{totalCalories.toFixed(2)} kcl</text>
+            <text x="50%" y="50%" textAnchor="middle" dy={-10} fill="#fff" className={styles.totalCaloriesLabel}>Gesamtkalorien</text>
             
-            <Tooltip formatter={(value, name, props) => [`${props.payload.name}: ${value.toFixed(2)} Kalorien`, ""]} /> 
+            
           </PieChart>
         )}
       </div>

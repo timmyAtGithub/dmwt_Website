@@ -1,50 +1,70 @@
-/* styles/Navbar.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
+  background-color: #1b1b1b;
   padding: 10px 20px;
-  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  position: fixed; /* Fixiert die Navbar am oberen Rand */
+  top: 0; /* Positioniert die Navbar am oberen Rand */
+  width: 100%; /* Stellt sicher, dass die Navbar die volle Breite des Bildschirms einnimmt */
+  z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Inhalten liegt */
+}
+
+.leftSection,
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.leftSection {
+  flex: 1;
+}
+
+.rightSection {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.centerSection {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduziert den Abstand zwischen den Icons */
 }
 
 .logo img {
-  height: 50px;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
+  height: 40px;
 }
 
 .menuItem {
-  margin: 0 10px;
+  color: #ccc;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.menuItem:hover,
+.active {
   color: white;
-  text-decoration: none;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .userSection {
   display: flex;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
 }
 
 .userImage {
-  width: 40px;
   height: 40px;
+  width: 40px;
   border-radius: 50%;
-  margin-left: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.userImage:hover {
-  transform: scale(1.1);
 }
 
 .dropdown {
@@ -52,44 +72,41 @@
   top: 60px;
   right: 20px;
   background-color: #444;
-  color: white;
+  min-height: 50px;
+  min-width: 100px;
+  height: auto;
+  width: 10%;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font: 15px 'Poppins';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdownImage {
-  width: 80px;
-  height: 80px;
+  height: 50%;
+  width: 100%;
   border-radius: 50%;
   margin-bottom: 10px;
-  object-fit: cover;
 }
 
 .logoutButton {
-  background-color: #f00;
+  background-color: #e74c3c;
   color: white;
   border: none;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: block;
+  font: 75% 'Poppins', sans-serif;
+  text-align: center;
 }
 
 .logoutButton:hover {
-  background-color: #c00;
-}
-
-.loginButton {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.loginButton:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #c0392b;
 }

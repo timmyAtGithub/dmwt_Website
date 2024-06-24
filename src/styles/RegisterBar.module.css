@@ -1,11 +1,11 @@
 .registerBar {
     position: fixed;
-    bottom: 0px;
+    bottom: -25px;
     left: 0;
     right: 0;
     margin: 0 0px;
     color: black;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     padding: 20px;
     text-align: center;
@@ -14,7 +14,8 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1000;
-    border-radius: 8px;
+    border-radius: 25px;
+    height: 25%;
   }
   
   .registerBar h2 {
@@ -28,7 +29,7 @@
   .registerButton {
     padding: 10px 20px;
     font-size: 16px;
-    bottom: 10px;
+    top: 10%;
     border: none;
     border-radius: 4px;
     background-color: #007BFF;
@@ -40,5 +41,31 @@
   
   .registerButton:hover {
     background-color: #0056b3;
+  }
+  
+  /* Mobile Version */
+  @media (max-width: 768px) {
+    .registerBar {
+      bottom: 0;
+      height: auto;
+      padding: 10px;
+      border-radius: 0;
+    }
+  
+    .registerButton {
+      padding: 10px 15px;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  
+    .registerBar h2 {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+  
+    .registerBar p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
   }
   

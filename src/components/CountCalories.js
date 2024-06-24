@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from '../styles/CountCalories.module.css';
 
 const ProgressBar = ({ value, max, label }) => {
   const percentage = (value / max) * 100;
@@ -20,21 +21,22 @@ const ProgressBar = ({ value, max, label }) => {
   }
 
   return (
-    <div style={{ margin: '10px 0', color: 'white' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
-        <span>{Math.round(value)}</span> {/* Display rounded value */}
-        <span>{label}</span>
-        <span>{Math.round(max)}</span> {/* Display rounded max */}
-      </div>
-      <div style={{ background: '#333', borderRadius: '10px', overflow: 'hidden' }}>
-        <div
-          style={{
-            width: `${percentage > 100 ? 100 : percentage}%`,
-            background: barColor,
-            height: '10px',
-            borderRadius: '10px'
-          }}
-        ></div>
+    <div className={styles.progressBarWrapper}>
+      <div className={styles.progressBarContainer}>
+        <div className={styles.progressBarInfo}>
+          <span className={styles.progressBarValue}>{Math.round(value)}</span>
+          <span>{label}</span>
+          <span className={styles.progressBarMax}>{Math.round(max)}</span>
+        </div>
+        <div className={styles.progressBarBackground}>
+          <div
+            className={styles.progressBarFill}
+            style={{
+              width: `${percentage > 100 ? 100 : percentage}%`,
+              backgroundColor: barColor,
+            }}
+          ></div>
+        </div>
       </div>
     </div>
   );
@@ -107,8 +109,8 @@ const CountCalories = ({ userId }) => {
   if (!caloriesData || !caloriesEatenData) return <p>Loading...</p>;
 
   return (
-    <div style={{ background: '#1e1e1e', padding: '20px', borderRadius: '10px' }}>
-      <h2>Heute gegessen</h2>
+    <div className={styles.countCaloriesContainer}>
+      <h2 className={styles.h2}>Heute gegessen</h2>
       <ProgressBar
         value={caloriesEatenData.carbs}
         max={caloriesData.carbs / 4}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import styles from '../styles/Login.module.css'; // Hinweis: Verwende .module.css
+import styles from '../styles/Login.module.css';
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState('');
@@ -9,7 +9,6 @@ const Login = ({ setUser }) => {
   const router = useRouter();
 
   useEffect(() => {
-    document.body.classList.add(styles.noScroll);
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
@@ -23,6 +22,9 @@ const Login = ({ setUser }) => {
     };
 
     verifySession();
+    return () => {
+      document.body.classList.remove(styles.noScroll);
+    };
   }, [router, setUser]);
 
   const handleLogin = async () => {
@@ -32,6 +34,7 @@ const Login = ({ setUser }) => {
       router.push('/dashboard');
     } catch (error) {
       console.error('Error logging in:', error);
+      alert('Login failed: ' + (error.response?.data?.message || error.message));
     }
   };
 

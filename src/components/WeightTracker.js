@@ -56,8 +56,8 @@ const WeightTracker = ({ userId, onShowBig }) => {
         label: 'Gewicht',
         data: weights.map(w => w.weight),
         fill: false,
-        backgroundColor: 'purple',
-        borderColor: 'purple',
+        backgroundColor: '#845ED7',
+        borderColor: '#845ED7',
       },
     ],
   };

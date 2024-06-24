@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; // Import useRouter
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faHome, faDumbbell } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +9,7 @@ import styles from '../styles/Navbar.module.css';
 const Navbar = () => {
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const router = useRouter(); // Initialize useRouter
 
   useEffect(() => {
     const verifySession = async () => {
@@ -34,44 +36,52 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <img src="/images/Logo.png" alt="Logo" />
+      <div className={styles.leftSection}>
+        <div className={styles.logo}>
+          <img src="/images/Logo.png" alt="Logo" />
+        </div>
       </div>
-      <div className={styles.menu}>
-        <Link href="/meals" legacyBehavior>
-          <a className={styles.menuItem}>
-            <FontAwesomeIcon icon={faUtensils} />
-          </a>
-        </Link>
-        <Link href="/" legacyBehavior>
-          <a className={styles.menuItem}>
-            <FontAwesomeIcon icon={faHome} />
-          </a>
-        </Link>
-        <Link href="/exercises" legacyBehavior>
-          <a className={styles.menuItem}>
-            <FontAwesomeIcon icon={faDumbbell} />
-          </a>
-        </Link>
-      </div>
-      <div className={styles.userSection} onClick={() => setShowDropdown(!showDropdown)}>
-        {user ? (
+      <div className={styles.centerSection}>
+        {user && (
           <>
-            <span>{user.vorname}</span>
-            <img src="/images/profilePic.jpg" alt="User" className={styles.userImage} />
-            {showDropdown && (
-              <div className={styles.dropdown}>
-                <img src="/images/profilePic.jpg" alt="User" className={styles.dropdownImage} />
-                <span>{user.vorname}</span>
-                <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
-              </div>
-            )}
+            <Link href="/meals" legacyBehavior>
+              <a className={`${styles.menuItem} ${router.pathname === '/meals' ? styles.active : ''}`}>
+                <FontAwesomeIcon icon={faUtensils} />
+              </a>
+            </Link>
+            <Link href="/dashboard" legacyBehavior>
+              <a className={`${styles.menuItem} ${router.pathname === '/dashboard' ? styles.active : ''}`}>
+                <FontAwesomeIcon icon={faHome} />
+              </a>
+            </Link>
+            <Link href="/exercises" legacyBehavior>
+              <a className={`${styles.menuItem} ${router.pathname === '/exercises' ? styles.active : ''}`}>
+                <FontAwesomeIcon icon={faDumbbell} />
+              </a>
+            </Link>
           </>
-        ) : (
-          <Link href="/loginPage" legacyBehavior>
-            <a className={styles.loginButton}>Login</a>
-          </Link>
         )}
+      </div>
+      <div className={styles.rightSection}>
+        <div className={styles.userSection} onClick={() => setShowDropdown(!showDropdown)}>
+          {user ? (
+            <>
+              <span>{user.vorname}</span>
+              <img src="/images/profilePic.jpg" alt="User" className={styles.userImage} />
+              {showDropdown && (
+                <div className={styles.dropdown}>
+                  <img src="/images/profilePic.jpg" alt="User" className={styles.dropdownImage} />
+                  <span>{user.vorname}</span>
+                  <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
+                </div>
+              )}
+            </>
+          ) : (
+            <Link href="/loginPage" legacyBehavior>
+              <a className={styles.loginButton}>Login</a>
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );
