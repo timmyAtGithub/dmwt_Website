@@ -1,29 +1,31 @@
+/* Dashboard.module.css */
 .dashboardContainer {
-  background-color: #1b1b1b; /* Hintergrundfarbe des Dashboards */
-  color: #333; /* Textfarbe des Dashboards */
+  background-color: #242424;
+  color: #fff; /* Textfarbe geändert zu weiß */
   padding: 20px;
-  border-radius: 8px;
+  min-height: 100vh; /* Vollbildhöhe */
+  overflow-y: auto; 
+  padding-top: 70px;/* Vertikales Scrollen ermöglichen */
 }
 
 .dashboardContent {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Platz zwischen den Abschnitten */
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.dashboard-section {
-  background-color: #333;
+.dashboardSection {
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.dashboardContent.blur {
-  filter: blur(5px);
+  flex: 1;
+  min-width: 300px;
+  max-width: 31%; /* Maximal ein Drittel der Breite */
+  overflow: hidden; /* Sicherstellen, dass Inhalt nicht überläuft */
 }
 
 .weightTrackerSmall {
-  width: 400px; /* Adjust the size as needed */
-  margin: 0 auto;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -33,7 +35,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(169, 169, 169, 0.8); /* Transparent dark grey background */
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,11 +43,10 @@
 }
 
 .weightTrackerBigContainer {
-  background: #333; /* Ensure the input form has a proper background */
+  background: #333;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
   max-width: 70%;
   max-height: 70%;
   overflow: auto;
@@ -60,6 +61,7 @@
   right: 10px;
   background: #333;
   border: none;
+  color: white;
   font-size: 20px;
   cursor: pointer;
 }
@@ -68,7 +70,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 20px; /* Add some space between the chart and the input form */
+  margin-left: 20px;
 }
 
 .weightInputForm input {
@@ -76,6 +78,30 @@
 }
 
 .weightChart {
-  flex-grow: 1; /* Make the chart take up the remaining space */
+  flex-grow: 1;
   margin-right: 20px;
+}
+
+/* Media Query für Bildschirme mit einer Breite von 768px oder kleiner */
+@media (max-width: 768px) {
+  .dashboardContent {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboardSection {
+    max-width: 100%;
+  }
+}
+
+/* Media Query für Bildschirme mit einer Breite von 480px oder kleiner */
+@media (max-width: 480px) {
+  .dashboardContent {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .dashboardSection {
+    max-width: 100%;
+  }
 }

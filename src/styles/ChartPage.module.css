@@ -1,8 +1,9 @@
 .backgroundImage {
   background-image: url('../../public/images/gemüseback.jpg');
-  background-size: cover; /* oder 'contain', je nach Bedarf */
+  background-size: cover; /* or 'contain', depending on the requirement */
   background-repeat: no-repeat;
   background-position: center center;
+  width: 100%;
 }
 
 .container {
@@ -10,9 +11,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100vh; /* Vollständige Bildschirmhöhe verwenden */
+  height: 100vh; /* Use full screen height */
   overflow: hidden;
-  background-color: #333; /* Fallback-Farbe, wenn das Bild nicht geladen werden kann */
+  background-color: #333; /* Fallback color if the image fails to load */
+  padding-top: 70px;
+  color: white;
 }
 
 .noScroll {
@@ -24,6 +27,7 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .button {
@@ -42,10 +46,38 @@
 
 .totalCaloriesText {
   font-size: 24px;
-  fill: white;
+  color: white; /* Using 'color' for text instead of 'fill' */
 }
 
 .totalCaloriesLabel {
   font-size: 24px;
-  fill: white;
+  color: white; /* Using 'color' for text instead of 'fill' */
+}
+
+/* Mobile Version */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    width: 100%;
+    height: auto; /* Adjust height for mobile */
+    padding-top: 40%;
+    color: white;
+  }
+
+  .CalCul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .totalCaloriesText, .totalCaloriesLabel {
+    font-size: 16px; /* Slightly smaller font size for mobile */
+  }
+  .backgroundImage {
+    height: 100%;
+  }
 }

@@ -2,24 +2,59 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Ensure content is aligned at the top */
+    justify-content: flex-start;
     min-height: 100vh;
     font-family: Arial, sans-serif;
     color: white;
-    background-color: #202020;
+    background-color: #242424;
     position: relative;
-  }
+    padding-top: 70px; /* Adjust this value to the height of your navbar */
+    
+}
   
-  .noScroll {
+.noScroll {
     overflow: hidden;
     height: 100%;
-  }
+}
   
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b1b1b;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
   
-  .filterContainer {
+.filterContainer {
     display: flex;
     justify-content: center;
-    margin: 20px 0; /* Added margin to give space around filters */
+    margin: 20px 0;
     gap: 10px;
-  }
+}
+
   
+/* Mobile Version */
+@media (max-width: 768px) {
+    .app {
+        padding-top: 70px
+    }
+
+    .navbar {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .filterContainer {
+        flex-direction: column;
+        margin: 10px 0;
+        gap: 5px;
+        width: 90%;
+    }
+}

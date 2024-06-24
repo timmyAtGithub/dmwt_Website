@@ -1,0 +1,42 @@
+.countCaloriesContainer {
+    background: #161717;
+    padding: 20px;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    
+  }
+  
+  .progressBarWrapper {
+    background: #242424;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .progressBarContainer {
+    color: #E0E0E0;
+  }
+  
+  .progressBarInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .progressBarValue,
+  .progressBarMax {
+    font-weight: bold;
+  }
+  
+  .progressBarBackground {
+    background: #555;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progressBarFill {
+    height: 10px;
+    border-radius: 10px;
+  }

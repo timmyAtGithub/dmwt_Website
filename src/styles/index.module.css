@@ -1,0 +1,25 @@
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  
+  .section {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-stop: always;
+  }
+  
+  .animationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .animation {
+    animation: spin 1s infinite linear;
+  }
+  

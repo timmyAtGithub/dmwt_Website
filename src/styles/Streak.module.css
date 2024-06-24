@@ -1,9 +1,10 @@
 .streakContainer {
-    background: #333;
+    background: #161717;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 25px;
     color: white;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
   
   .streakContainer h2 {

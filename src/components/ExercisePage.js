@@ -25,20 +25,25 @@ const ExercisesPage = () => {
       }
     };
 
+    fetchExercises();
+  }, []);
+
+  useEffect(() => {
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
         setUser(response.data);
       } catch (error) {
         console.error('Session verification failed:', error);
+        router.push('/loginPage');
       }
     };
 
-    fetchExercises();
     verifySession();
-  }, []);
+  }, [router]);
 
   useEffect(() => {
+    document.body.classList.remove(styles.noScroll);
     const fetchFavorites = async () => {
       if (user) {
         try {
@@ -51,20 +56,6 @@ const ExercisesPage = () => {
     };
 
     fetchFavorites();
-  }, [user]);
-
-  useEffect(() => {
-    if (user === null) {
-      // If user information is not loaded yet, do nothing
-      return;
-    }
-
-    if (!user) {
-      router.push('/loginPage');
-      document.body.classList.add(styles.noScroll);
-    } else {
-      document.body.classList.remove(styles.noScroll);
-    }
   }, [user]);
 
   const handleToggleFavorite = async (exerciseId) => {

@@ -17,15 +17,6 @@ const MealsPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const fetchMeals = async () => {
-      try {
-        const response = await axios.get('/api/meals');
-        setMeals(response.data);
-      } catch (error) {
-        console.error('Error fetching meals:', error);
-      }
-    };
-
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
@@ -35,9 +26,29 @@ const MealsPage = () => {
       }
     };
 
-    fetchMeals();
     verifySession();
   }, []);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      try {
+        let response;
+        if (user) {
+          response = await axios.get('/api/meals');
+        } else {
+          response = await axios.get('/api/meals');
+          const limitedMeals = response.data.slice(0, 3);
+          setMeals(limitedMeals);
+          return;
+        }
+        setMeals(response.data);
+      } catch (error) {
+        console.error('Error fetching meals:', error);
+      }
+    };
+
+    fetchMeals();
+  }, [user]);
 
   useEffect(() => {
     const fetchFavorites = async () => {
