@@ -52,7 +52,7 @@
 }
 
 .modalText {
-  text-align: left;
+  text-align: center , justify;
   width: 30vw;
   color: white;
   overflow-y: auto;
