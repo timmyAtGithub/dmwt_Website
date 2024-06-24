@@ -32,8 +32,7 @@ export default async function handler(req, res) {
       const caloriesData = await db.collection('calories').findOne({ userId });
       const caloriesEatenData = await caloriesEatenCollection.findOne({ userId });
 
-      console.log(caloriesData);
-      console.log(caloriesEatenData);
+     
 
       if (!caloriesData || !caloriesEatenData) {
         return res.status(404).json({ error: 'Data not found' });

@@ -11,8 +11,6 @@ const Streak = ({ userId }) => {
         const response = await axios.get('/api/getDailyCalories', { params: { userId } });
         const dailyCalories = response.data;
 
-        
-        console.log('Fetched dailyCalories:', dailyCalories);
 
        
         let currentStreak = 0;
@@ -34,7 +32,7 @@ const Streak = ({ userId }) => {
           };
 
          
-
+          
 
           const isCarbsGreen = inGreenZone(carbs, maxCarbs / 4);
           const isProteinGreen = inGreenZone(protein, maxProtein / 4);
@@ -54,7 +52,7 @@ const Streak = ({ userId }) => {
           }
 
          
-          console.log(`Current Streak: ${currentStreak}`); 
+          
         });
 
         setStreak(currentStreak);

@@ -43,7 +43,7 @@ const UpdateCaloriesChart = ({ data, userId }) => {
         carbs: macroData.find(item => item.name === 'Kohlenhydrate')?.value || 0
       });
 
-      console.log('API response:', response.data);
+      
 
       if (response.status === 200) {
         alert('Kalorienwerte erfolgreich aktualisiert');

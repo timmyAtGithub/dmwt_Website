@@ -31,11 +31,13 @@ const imageMapping = {
     '66787200bd51feeca2244bc5': 'plank.jpeg',
     '66787200bd51feeca2244bc6': 'shoulderpress.jpeg',
     '66787200bd51feeca2244bcc': 'latpulldown.jpeg',
+
     '66787200bd51feeca2244bd2': 'exer1.jpeg',
     '66787200bd51feeca2244bd1': 'exer2.jpeg',
     '66787200bd51feeca2244bd0': 'exer3.jpeg',
     '66787200bd51feeca2244bcf': 'exer4.jpeg',
     '66787200bd51feeca2244bce': 'exer5.jpeg',
+    
     '66787200bd51feeca2244bcd': 'exer3.jpeg',
     '66787200bd51feeca2244bcb': 'exer1.jpeg',
     '66787200bd51feeca2244bca': 'exer2.jpeg',
