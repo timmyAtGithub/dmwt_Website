@@ -32,12 +32,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 33%; /* Increased margin for more space between images */
+  margin: 0 33%;
+  transform: translateY(5%);
 }
 
 .image {
-  width: 350px; /* Increased width for larger images */
-  height: 622px; /* Adjusted height to maintain aspect ratio */
+  width: 330px; /* Decreased width by 20px */
+  height: 602px; /* Adjusted height to maintain aspect ratio */
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -67,6 +68,7 @@
 .text-box {
   display: none;
   position: absolute;
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.7);
   padding: 20px;
@@ -77,8 +79,16 @@
   color: white;
 }
 
-.image-container.active .text-box {
+.image-container.active.left .text-box {
   display: block;
+  left: calc(100% + 20px);
+  right: auto;
+}
+
+.image-container.active.right .text-box {
+  display: block;
+  right: calc(100% + 20px);
+  left: auto;
 }
 
 .weiter-button {
@@ -86,7 +96,7 @@
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007BFF;
+  background-color: #aa0000;
   color: white;
   border: none;
   border-radius: 5px;
@@ -94,15 +104,29 @@
   z-index: 3;
 }
 
-.image-container.active .weiter-button {
+.image-container.active.left .weiter-button {
   display: block;
-  position: absolute;
-  bottom: -40px; /* Adjust this as needed to place the button between the images */
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(100% + 20px);
+  right: auto;
 }
 
-/* Mobile Styles */
+.image-container.active.right .weiter-button {
+  display: block;
+  right: calc(100% + 20px);
+  left: auto;
+}
+
+.zwischen-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @media (max-width: 768px) {
   .entscheidung-container {
     flex-direction: column;
@@ -110,34 +134,27 @@
   }
 
   .image-container {
-    margin: 20px 0; /* Reduced margin for smaller screens */
+    margin: 20px 0;
   }
 
   .image {
-    width: 80vw; /* Width relative to viewport */
-    height: auto; /* Maintain aspect ratio */
+    width: 80vw;
+    height: auto;
   }
 
   .caption {
-    font-size: 1em; /* Smaller font size */
+    font-size: 1em;
   }
 
   .text-box {
-    width: 80vw; /* Width relative to viewport */
-    top: auto; /* Override the top positioning */
-    bottom: 10%; /* Position at the bottom */
+    width: 80vw;
+    top: auto;
+    bottom: 10%;
   }
 
-  .image-container.active .text-box {
+  .image-container.active.left .text-box,
+  .image-container.active.right .text-box {
     bottom: 0%;
-    transform: none;
-    width: 110%;
-    height: 100%;
-  }
-
-  .image-container:last-child.active .text-box {
-    transform: translateY(10%); /* Position at the top for the second image */
-    bottom: auto;
     transform: none;
     width: 110%;
     height: 100%;
@@ -148,9 +165,5 @@
     position: static;
     transform: none;
     margin: 20px auto 0;
-  }
-
-  .image-container:last-child.active .weiter-button {
-    bottom: 100%; /* Adjust this to move the button higher */
   }
 }

@@ -35,7 +35,9 @@ const Home = () => {
       {/* Header-Elemente der Home-Seite */}
       <div className={styles.headerImageContainer}>
         <img src="./images/home.jpg" alt="Header" className={styles.headerImage} />
-        <h1 className={styles.headerTitle}>Mit der richtigen Ernährung zum Traumkörper</h1>
+        <div className={styles.headerTitleContainer}>
+          <h1 className={styles.headerTitle}>Mit der richtigen Ernährung zum Traumkörper</h1>
+        </div>
       </div>
     </div>
   );
