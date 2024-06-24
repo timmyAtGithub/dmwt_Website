@@ -8,6 +8,7 @@
   background-position: center;
   background-color: rgba(0, 0, 0, 0.6); /* Hier wird die Transparenz auf das Hintergrundbild angewendet */
   overflow: hidden;
+  position: relative; /* Füge dies hinzu */
 }
 
 .loginWrapper::before {
@@ -18,6 +19,21 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2); /* Hier die Transparenz anpassen */
+  z-index: 1; /* Füge dies hinzu */
+}
+
+.additionalText {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  z-index: 2; /* Füge dies hinzu */
+  position: relative; /* Füge dies hinzu */
+}
+
+.additionalText:hover {
+  color: #cccccc;
 }
 
 .noScroll {
@@ -54,7 +70,7 @@
 
 .loginText {
   font-size: 24px;
-  color: #ffffff; 
+  color: #ffffff;
   font-style: italic;
   margin-bottom: 20px;
   text-align: center;
@@ -68,14 +84,14 @@
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Füge dies hinzu */
+  position: relative; /* Füge dies hinzu */
 }
 
 .loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  
 }
 
 .inputContainer {
@@ -92,20 +108,19 @@
   border-radius: 8px;
   text-align: center;
   font-size: 16px;
-  
 }
 
 .loginButton {
   width: 100%;
   padding: 10px;
-  background-color: #aa0000; 
+  background-color: #aa0000;
   color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .loginButton:hover {
