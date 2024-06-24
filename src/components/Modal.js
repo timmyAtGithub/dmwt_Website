@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import imageMapping from '../utils/imageMapping';
 import styles from '../styles/Modal.module.css';
 
 const Modal = ({ dish, onClose, onEatToday, onToggleFavorite, isFavorite }) => {
   const imageUrl = imageMapping[dish._id] ? `/images/${imageMapping[dish._id]}` : '/images/default.jpeg';
+
+  useEffect(() => {
+    document.body.classList.add(styles.noScroll);
+
+    return () => {
+      document.body.classList.remove(styles.noScroll);
+    };
+  }, []);
 
   return (
     <div className={styles.modalBackdrop} onClick={onClose}>
