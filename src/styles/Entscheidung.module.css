@@ -43,6 +43,8 @@
 .image {
   width: 300px; 
   height: 552px; 
+  width: 300px; 
+  height: 552px;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -126,11 +128,11 @@
 
 
 .image-container.active.left .weiter-button {
-  top: calc(100% + 20px); 
+  top: calc(100% + 20px);
 }
 
 .image-container.active.right .weiter-button {
-  bottom: calc(100% + 20px);
+  bottom: calc(100% + 20px); 
 }
 
 
@@ -144,7 +146,6 @@
   transform: translateY(-50%);
 }
 
-/* Mobile specific styles */
 @media (max-width: 768px) {
   .entscheidung-container {
     flex-direction: column;
@@ -202,19 +203,20 @@
   }
 
   .weiter-button {
-    width: 80vw; 
+    width:  70vw; 
     position: static;
     transform: none;
-    margin: 10px auto; 
+    margin: -20px auto; 
   }
 
   .image-container.active.left .weiter-button {
-    bottom: 10px; 
+    bottom: 100%; 
     top: auto;
   }
 
   .image-container.active.right .weiter-button {
-    top: 10px; 
+    top: 100%; 
     bottom: auto;
+    
   }
 }

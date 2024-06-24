@@ -28,7 +28,7 @@
   }
   
   .button {
-    background-color: #007BFF;
+    background-color: #aa0000;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -39,7 +39,7 @@
   }
   
   .button:hover {
-    background-color: #0056b3;
+    background-color: #cc0000;
   }
   
   .noScroll {

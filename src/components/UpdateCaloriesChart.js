@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import styles from '../styles/UpdateCalories.module.css';
+import styles from '../styles/UpdateCaloriesChart.module.css';
 
-const UpdateCaloriesChart = ({ data }) => {
+const UpdateCaloriesChart = ({ data, userId }) => {
   const COLORS = ["#39CEF3", "#72CA3D", "#FF4906"];
   const BORDER_COLORS = ["Transparent", "Transparent", "Transparent"];
   const router = useRouter();
@@ -31,21 +31,11 @@ const UpdateCaloriesChart = ({ data }) => {
     return () => window.removeEventListener('resize', updateChartDimensions);
   }, []);
 
-  useEffect(() => {
-    
-    const macroData = data.map(item => ({
-      name: item.name,
-      value: item.value
-    }));
-    localStorage.setItem('macroData', JSON.stringify(macroData));
-  }, [data]);
-
   const handleUpdateCalories = async () => {
     const macroData = JSON.parse(localStorage.getItem('macroData'));
-    const userId = "YOUR_USER_ID"; 
 
     try {
-      await axios.post('/api/updateCalories', {
+      const response = await axios.post('/api/updateCalories', {
         userId,
         calories: macroData.reduce((acc, item) => acc + item.value, 0),
         protein: macroData.find(item => item.name === 'Proteine')?.value || 0,
@@ -53,7 +43,14 @@ const UpdateCaloriesChart = ({ data }) => {
         carbs: macroData.find(item => item.name === 'Kohlenhydrate')?.value || 0
       });
 
-      alert('Kalorienwerte erfolgreich aktualisiert');
+      console.log('API response:', response.data);
+
+      if (response.status === 200) {
+        alert('Kalorienwerte erfolgreich aktualisiert');
+        router.push('/dashboard');
+      } else {
+        alert('Fehler beim Aktualisieren der Kalorienwerte');
+      }
     } catch (error) {
       console.error('Fehler beim Aktualisieren der Kalorienwerte:', error);
       alert('Fehler beim Aktualisieren der Kalorienwerte');
@@ -126,10 +123,12 @@ const UpdateCaloriesChart = ({ data }) => {
 
             <text x="50%" y="50%" textAnchor="middle" dy={20} fill="#fff" className={styles.totalCaloriesText}>{totalCalories.toFixed(2)} kcl</text>
             <text x="50%" y="50%" textAnchor="middle" dy={-10} fill="#fff" className={styles.totalCaloriesLabel}>Gesamtkalorien</text>
+            
+            
           </PieChart>
         )}
       </div>
-      <button className={styles.button} onClick={handleUpdateCalories}>Kalorienwerte aktualisieren</button>
+      <button className={styles.button} onClick={handleUpdateCalories}>Kalorien aktualisieren</button>
     </div>
   );
 };
