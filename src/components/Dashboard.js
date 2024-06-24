@@ -57,14 +57,17 @@ const Dashboard = () => {
       <h1>Hallo {user.vorname}</h1>
       <div className={styles.dashboardContent}>
         <div className={styles.dashboardSection}>
+          <Streak userId={user.userId} />
+          
+        </div>
+        <div className={styles.dashboardSection}>
           <CountCalories userId={user.userId} />
+          
         </div>
         <div className={styles.dashboardSection}>
           <WeightTracker userId={user.userId} onShowBig={handleShowWeightTrackerBig} />
         </div>
-        <div className={styles.dashboardSection}>
-          <Streak userId={user.userId} />
-        </div>
+        
       </div>
       {showWeightTrackerBig && (
         <div className={styles.weightTrackerBigOverlay}>
