@@ -16,6 +16,7 @@ const Streak = ({ userId }) => {
 
         // Calculate the streak
         let currentStreak = 0;
+        let maxStreak = 0;
         let lastDate = null;
         const currentDate = new Date().setHours(0, 0, 0, 0); // Set current date to midnight for accurate comparison
 
@@ -47,18 +48,17 @@ const Streak = ({ userId }) => {
           console.log(`isCarbsGreen: ${isCarbsGreen}, isProteinGreen: ${isProteinGreen}, isFatGreen: ${isFatGreen}, isCaloriesGreen: ${isCaloriesGreen}`);
 
           if (isCarbsGreen && isProteinGreen && isFatGreen && isCaloriesGreen) {
-            if (lastDate && (entryDate - lastDate !== 86400000)) { // Check if the date difference is 1 day (86400000 ms)
-              currentStreak = 0; // Reset current streak if days are not consecutive
-            }
-            currentStreak += 1;
-            lastDate = entryDate; // Update the last date to the current entry's date
+            // Check if the date difference is 1 day (86400000 ms)
+              currentStreak += 1; // Increment current streak if days are consecutive
+            
+            // Update the last date to the current entry's date
           } else {
             currentStreak = 0; // Reset current streak if any of the values are not in the green zone
             lastDate = null;
           }
 
-          
-          console.log(`Current Streak: ${currentStreak}}`); // Log current and max streak
+         // Track the maximum streak
+          console.log(`Current Streak: ${currentStreak}`); // Log current and max streak
         });
 
         setStreak(currentStreak);

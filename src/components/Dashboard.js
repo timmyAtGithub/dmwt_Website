@@ -5,6 +5,7 @@ import CountCalories from './CountCalories';
 import WeightTracker from './WeightTracker';
 import WeightTrackerBig from './WeightTrackerBig';
 import Streak from './Streak';
+import UpdateCalories from './UpdateCalories'; // Import the new UpdateCalories component
 import styles from '../styles/Dashboard.module.css';
 
 const Dashboard = () => {
@@ -56,11 +57,16 @@ const Dashboard = () => {
       <h1>Hallo {user.vorname}</h1>
       <div className={styles.dashboardContent}>
         <div className={styles.dashboardSection}>
-          <Streak userId={user.userId} style={{ marginBottom: '20px' }} />
+          <div className={styles.streakSection}>
+            <Streak userId={user.userId} />
+          </div>
           <WeightTracker userId={user.userId} onShowBig={handleShowWeightTrackerBig} />
         </div>
         <div className={styles.dashboardSection}>
           <CountCalories userId={user.userId} />
+        </div>
+        <div className={styles.dashboardSection}>
+          <UpdateCalories />
         </div>
       </div>
       {showWeightTrackerBig && (

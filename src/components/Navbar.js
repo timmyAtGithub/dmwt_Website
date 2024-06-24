@@ -9,6 +9,7 @@ import styles from '../styles/Navbar.module.css';
 const Navbar = () => {
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter(); // Initialize useRouter
 
   useEffect(() => {
@@ -22,6 +23,17 @@ const Navbar = () => {
     };
 
     verifySession();
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleLogout = async () => {
@@ -38,10 +50,11 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.leftSection}>
         <div className={styles.logo}>
-          <img src="/images/Logo.png" alt="Logo" />
-        </div>
-        <div className={styles.logotext}>
-          <img src="/images/logotext.png" alt="Logo" />
+          {isMobile ? (
+            <img src="/images/Logo.png" alt="Logo" />
+          ) : (
+            <img src="/images/logotext.png" alt="Logo" />
+          )}
         </div>
       </div>
       <div className={styles.centerSection}>
