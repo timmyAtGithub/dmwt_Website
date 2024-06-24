@@ -1,3 +1,4 @@
+/* Global styles for the component */
 .entscheidung {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@
   align-items: center;
 }
 
+/* Container styles */
 .entscheidung-container {
   display: flex;
   justify-content: center;
@@ -21,10 +23,12 @@
   max-width: 100%;
 }
 
+/* Blur background for inactive images */
 .blur-background .image-container:not(.active) {
   filter: blur(5px);
 }
 
+/* Image container styles */
 .image-container {
   position: relative;
   cursor: pointer;
@@ -37,22 +41,25 @@
 }
 
 .image {
-  width: 330px; /* Decreased width by 20px */
-  height: 602px; /* Adjusted height to maintain aspect ratio */
+  width: 300px; /* Decreased width by 30px */
+  height: 552px; /* Adjusted height to maintain aspect ratio */
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
+/* Styles for inactive images */
 .image-container:not(.active) .image {
   opacity: 0.5;
 }
 
+/* Styles for active images */
 .image-container.active .image {
   transform: scale(1.05);
   opacity: 1;
 }
 
+/* Caption styles */
 .caption {
   position: absolute;
   bottom: 20px;
@@ -65,6 +72,7 @@
   font-size: 1.2em;
 }
 
+/* Text box styles */
 .text-box {
   display: none;
   position: absolute;
@@ -79,21 +87,25 @@
   color: white;
 }
 
-.image-container.active.left .text-box {
+/* Display text box for active images */
+.image-container.active .text-box {
   display: block;
+}
+
+/* Specific styles for left and right active images */
+.image-container.active.left .text-box {
   left: calc(100% + 20px);
   right: auto;
 }
 
 .image-container.active.right .text-box {
-  display: block;
   right: calc(100% + 20px);
   left: auto;
 }
 
+/* Button styles */
 .weiter-button {
   display: none;
-  margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #aa0000;
@@ -102,23 +114,28 @@
   border-radius: 5px;
   cursor: pointer;
   z-index: 3;
+  position: absolute;
+  left: 50%; /* Zentriert */
+  transform: translateX(-50%);
 }
 
-.image-container.active.left .weiter-button {
+/* Display button for active images */
+.image-container.active .weiter-button {
   display: block;
-  left: calc(100% + 20px);
-  right: auto;
+}
+
+/* Specific styles for left and right active images */
+.image-container.active.left .weiter-button {
+  top: calc(100% + 20px); /* Button unter dem Text */
 }
 
 .image-container.active.right .weiter-button {
-  display: block;
-  right: calc(100% + 20px);
-  left: auto;
+  bottom: calc(100% + 20px); /* Button über dem Text */
 }
 
+/* Zwischen-text styles */
 .zwischen-text {
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1.5em;
@@ -127,10 +144,22 @@
   transform: translateY(-50%);
 }
 
+/* Mobile specific styles */
 @media (max-width: 768px) {
   .entscheidung-container {
     flex-direction: column;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    padding-bottom: 10vw;
+  }
+
+  .zwischen-text {
+    position: relative;
+    font-size: 1em;
+    width: 90vw;
+    top: 5vw;
+    border-radius: 5px;
+    padding: 0vw 25vw;
   }
 
   .image-container {
@@ -138,32 +167,54 @@
   }
 
   .image {
-    width: 80vw;
+    width: 65vw; /* Width relative to viewport */
     height: auto;
   }
 
   .caption {
-    font-size: 1em;
+    font-size: 4vw;
   }
 
   .text-box {
-    width: 80vw;
-    top: auto;
-    bottom: 10%;
+    width: 80vw; /* Width relative to viewport */
+    height: auto;
+    transform: none;
+    position: absolute;
   }
 
-  .image-container.active.left .text-box,
-  .image-container.active.right .text-box {
-    bottom: 0%;
+  .image-container.active .text-box {
+    top: auto;
+    bottom: auto;
     transform: none;
-    width: 110%;
-    height: 100%;
+    position: absolute;
+  }
+
+  .image-container.active.left .text-box {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .image-container.active.right .text-box {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .weiter-button {
-    width: 80vw;
+    width: 80vw; /* Width relative to viewport */
     position: static;
     transform: none;
-    margin: 20px auto 0;
+    margin: 10px auto; /* Margin adjusted for center alignment */
+  }
+
+  .image-container.active.left .weiter-button {
+    bottom: 10px; /* Button unter dem Text */
+    top: auto;
+  }
+
+  .image-container.active.right .weiter-button {
+    top: 10px; /* Button über dem Text */
+    bottom: auto;
   }
 }
