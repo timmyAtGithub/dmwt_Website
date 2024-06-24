@@ -40,6 +40,10 @@
   height: 40px;
 }
 
+.logotext img {
+  height: 40px;
+}
+
 .menuItem {
   color: #ccc;
   font-size: 20px;
