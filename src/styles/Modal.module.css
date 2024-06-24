@@ -58,12 +58,12 @@
 }
 
 .modalText button:first-of-type {
-  background-color: #007BFF;
+  background-color: #aa0000;
   color: white;
 }
 
 .modalText button:first-of-type:hover {
-  background-color: #0056b3;
+  background-color: #cc0000;
 }
 
 .modalText button:last-of-type {
