@@ -54,9 +54,8 @@ const CountCalories = ({ userId }) => {
 
     const fetchCaloriesInfo = async () => {
       try {
-        console.log(`Fetching calories info for userId: ${userId}`);
+        
         const response = await axios.get(`/api/caloriesInfo?userId=${userId}&t=${Date.now()}`);
-        console.log('API response:', response.data);
         setCaloriesData(response.data.caloriesData);
         setCaloriesEatenData(response.data.caloriesEatenData);
       } catch (error) {
@@ -71,18 +70,7 @@ const CountCalories = ({ userId }) => {
     const saveDailyCalories = async () => {
       if (caloriesEatenData && caloriesData) {
         const today = new Date().toISOString().split('T')[0];
-        console.log('Saving daily calories with the following data:', {
-          userId,
-          carbs: caloriesEatenData.carbs,
-          protein: caloriesEatenData.protein,
-          fat: caloriesEatenData.fat,
-          calories: caloriesEatenData.calories,
-          date: today,
-          maxCarbs: caloriesData.carbs,
-          maxProtein: caloriesData.protein,
-          maxFat: caloriesData.fat,
-          maxCalories: caloriesData.calories
-        });
+        
         try {
           await axios.post('/api/saveDailyCalories', {
             userId,
@@ -96,7 +84,7 @@ const CountCalories = ({ userId }) => {
             maxFat: caloriesData.fat,
             maxCalories: caloriesData.calories
           });
-          console.log('Daily calories saved successfully');
+          
         } catch (error) {
           console.error('Error saving daily calories:', error);
         }

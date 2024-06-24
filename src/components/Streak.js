@@ -11,8 +11,6 @@ const Streak = ({ userId }) => {
         const response = await axios.get('/api/getDailyCalories', { params: { userId } });
         const dailyCalories = response.data;
 
-        
-        console.log('Fetched dailyCalories:', dailyCalories);
 
        
         let currentStreak = 0;
@@ -34,18 +32,14 @@ const Streak = ({ userId }) => {
           };
 
          
-          console.log(`Date: ${entry.date}`);
-          console.log(`Carbs: ${carbs} (Expected: ${maxCarbs ? maxCarbs / 4 * 0.9 : 'N/A'}-${maxCarbs ? maxCarbs / 4 * 1.1 : 'N/A'})`);
-          console.log(`Protein: ${protein} (Expected: ${maxProtein ? maxProtein / 4 * 0.9 : 'N/A'}-${maxProtein ? maxProtein / 4 * 1.1 : 'N/A'})`);
-          console.log(`Fat: ${fat} (Expected: ${maxFat ? maxFat / 8 * 0.9 : 'N/A'}-${maxFat ? maxFat / 8 * 1.1 : 'N/A'})`);
-          console.log(`Calories: ${calories} (Expected: ${maxCalories ? maxCalories * 0.9 : 'N/A'}-${maxCalories ? maxCalories * 1.1 : 'N/A'})`);
+          
 
           const isCarbsGreen = inGreenZone(carbs, maxCarbs / 4);
           const isProteinGreen = inGreenZone(protein, maxProtein / 4);
           const isFatGreen = inGreenZone(fat, maxFat / 8);
           const isCaloriesGreen = inGreenZone(calories, maxCalories);
 
-          console.log(`isCarbsGreen: ${isCarbsGreen}, isProteinGreen: ${isProteinGreen}, isFatGreen: ${isFatGreen}, isCaloriesGreen: ${isCaloriesGreen}`);
+          
 
           if (isCarbsGreen && isProteinGreen && isFatGreen && isCaloriesGreen) {
             
@@ -58,7 +52,7 @@ const Streak = ({ userId }) => {
           }
 
          
-          console.log(`Current Streak: ${currentStreak}`); 
+          
         });
 
         setStreak(currentStreak);
