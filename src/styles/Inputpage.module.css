@@ -5,8 +5,11 @@
   background-repeat: no-repeat;
   background-position: center center;
   margin: 0;
-  padding: 0;
+  padding-top: 68px;
   font-family: Arial, sans-serif;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
 }
 
 .container {

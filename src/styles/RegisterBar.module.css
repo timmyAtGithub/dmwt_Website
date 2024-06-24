@@ -14,8 +14,7 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1000;
-    border-radius: 25px;
-    height: 25%;
+    height: 30%;
   }
   
   .registerBar h2 {
@@ -36,7 +35,7 @@
     color: white;
     cursor: pointer;
     align-self: center;
-    margin-bottom: 10px;
+    margin-bottom: 10vw;
   }
   
   .registerButton:hover {

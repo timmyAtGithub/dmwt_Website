@@ -1,21 +1,3 @@
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 1000;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
-  display: flex;
-  
-  flex-direction: row; /* Nebeneinander anordnen */
-  gap: 20px; /* Abstand zwischen Bild und Text */
-}
-
 .modalBackdrop {
   position: fixed;
   top: 0;
@@ -37,30 +19,32 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top */
   gap: 20px;
-  max-width: 90%;
+  width: 95%; /* Set width to 95% of the viewport */
   max-height: 90%;
-  overflow: auto;
+  overflow: hidden; /* Hide the scrollbar */
 }
 
 .modalImg {
   width: 30vw;
-  height: 30vw;
+  height: 60vw; /* Adjusted height for a portrait layout */
   max-height: 500px;
   border-radius: 8px;
+  object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 .modalText {
   text-align: left;
-  width: 30vw;
+  width: 60%; /* Adjusted width for larger text area */
   color: white;
   overflow-y: auto;
+  max-height: 90%; /* Prevent the text from exceeding modal height */
+  padding-right: 10px; /* Add some padding to avoid text touching the edge */
 }
 
-.modalText h2, .modalText p {
-  margin: 1% 1%;
-  
+.modalText h1, .modalText h2, .modalText p {
+  margin: 10px 0;
 }
 
 .modalText button {
@@ -71,13 +55,11 @@
   border-radius: 4px;
   cursor: pointer;
   width: 80%; /* Button width */
-  
 }
 
 .modalText button:first-of-type {
   background-color: #aa0000;
   color: white;
-  
 }
 
 .modalText button:first-of-type:hover {
@@ -99,25 +81,27 @@
   .modalContent {
     flex-direction: column;
     align-items: center;
-
   }
 
   .modalImg {
-    width: 100%;
-    max-width: 80%;
+    width: 90vw;
     height: auto;
-    
-    margin-bottom: 20px;
-    
+    max-height: 60vh; /* Adjusted height for portrait layout */
+    margin-bottom: 10px;
   }
 
   .modalText {
-    width: 100%;
+    width: 90vw;
     text-align: center;
+    overflow-y: auto;
+    max-height: 50vh;
   }
 
   .modalText button {
-    width: 100%;
-    max-width: 80%;
+    width: 90vw;
   }
+}
+
+.noScroll {
+  overflow: hidden;
 }

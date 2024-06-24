@@ -1,7 +1,7 @@
 .dish {
     width: calc(33.333% - 40px);
-    min-width: 500px;
-    max-width: 500px;
+    min-width: 475px;
+    max-width: 475px;
     height: auto;
     position: relative;
     padding: 0;
