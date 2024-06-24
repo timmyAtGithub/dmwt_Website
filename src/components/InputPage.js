@@ -2,10 +2,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import styles from '../styles/Inputpage.module.css';
 import ChartPage from './ChartPage';
-import Entscheidung from './Entscheidung';
-
-const gewuenscht=Entscheidung.gewuenscht;
-Entscheidung
 
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
@@ -14,7 +10,6 @@ const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
     return (10 * gewicht) + (6.25 * groesse) - (5 * alter) - 161;
   }
 };
-
 
 const berechnungTDEE = (bmr, aktivfaktor) => {
   return bmr * aktivfaktor;
@@ -47,7 +42,7 @@ const teilZuweisung = (tdee, gewuenscht) => {
   ];
 };
 
-const InputPage = ({ setData }) => {
+const InputPage = ({ setData, gewuenscht }) => {
   const [gewicht, setGewicht] = useState("");
   const [groesse, setGroesse] = useState("");
   const [alter, setAlter] = useState("");
@@ -73,7 +68,7 @@ const InputPage = ({ setData }) => {
     const bmr = berechnungBMR(gewichtValue, groesseValue, alterValue, geschlecht);
     const aktivfaktor = parseFloat(aktivitaetslevel);
     const tdee = berechnungTDEE(bmr, aktivfaktor);
-    const daten = teilZuweisung(tdee, 2); // assuming muscle gain is the default goal
+    const daten = teilZuweisung(tdee, gewuenscht);
 
     setChartData(daten);
 

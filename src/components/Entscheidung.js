@@ -6,6 +6,7 @@ import InputPage from './InputPage';
 const Entscheidung = () => {
   const [activeImage, setActiveImage] = useState(null);
   const [showInputPage, setShowInputPage] = useState(false);
+  const [gewuenscht, setGewuenscht] = useState(null);
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   const handleImageClick = (image) => {
@@ -13,11 +14,17 @@ const Entscheidung = () => {
   };
 
   const handleWeiterClick = () => {
-    setShowInputPage(true);
+    if (activeImage === 'left') {
+      setShowInputPage(true);
+      setGewuenscht(2);
+    } else if (activeImage === 'right') {
+      setShowInputPage(true);
+      setGewuenscht(1);
+    }
   };
 
   if (showInputPage) {
-    return <InputPage />;
+    return <InputPage gewuenscht={gewuenscht} />;
   }
 
   if (isMobile) {
@@ -33,7 +40,6 @@ const Entscheidung = () => {
                   <p>Eine optimale Ernährung für den Muskelaufbau erfordert ausreichend Protein zur Gewebereparatur und -entwicklung. Kohlenhydrate bieten Energie für das Training, während gesunde Fette den Hormonhaushalt unterstützen. Qualitativ hochwertige Kalorien sind entscheidend für das Muskelwachstum und die Regeneration nach dem Training. Essen von Nährstoffen aus Obst, Gemüse und Getreide trägt zur Energie bei.</p>
                   <button className={styles['weiter-button']} onClick={handleWeiterClick}>Weiter</button>
                 </div>
-                
               </>
             )}
           </div>
@@ -65,16 +71,13 @@ const Entscheidung = () => {
           <p className={styles.caption}>Muskelaufbau</p>
           {activeImage === 'left' && (
             <>
-            
               <div className={styles['text-box']}>
                 <p>Eine optimale Ernährung für den Muskelaufbau erfordert ausreichend Protein zur Gewebereparatur und -entwicklung. Kohlenhydrate bieten Energie für das Training, während gesunde Fette den Hormonhaushalt unterstützen. Qualitativ hochwertige Kalorien sind entscheidend für das Muskelwachstum und die Regeneration nach dem Training. Essen von Nährstoffen aus Obst, Gemüse und Getreide trägt zur Energie bei.</p>
                 <button className={styles['weiter-button']} onClick={handleWeiterClick}>Weiter</button>
               </div>
-              
             </>
           )}
         </div>
-        
 
         {!activeImage && <p className={styles['zwischen-text']}>Wählen Sie Ihr Ziel</p>}
 
@@ -87,7 +90,6 @@ const Entscheidung = () => {
                 <p>Eine ausgewogene Ernährung mit Kaloriendefizit hilft, Körperfett zu reduzieren und das Erscheinungsbild zu verbessern. Ausreichend Protein erhält Muskelmasse, während gesunde Fette und komplexe Kohlenhydrate den Stoffwechsel unterstützen. Nährstoffreiche Lebensmittel wie Obst, Gemüse und Vollkornprodukte fördern das Wohlbefinden und den Gewichtsverlust, indem sie langanhaltende Energie liefern.</p>
                 <button className={styles['weiter-button']} onClick={handleWeiterClick}>Weiter</button>
               </div>
-              
             </>
           )}
         </div>
