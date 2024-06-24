@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       const client = await dbConnect();
       const db = client.db('User');
       const collection = db.collection('caloriesEaten');
-      console.log(userId);
+      
 
       
       const existingData = await collection.findOne({ userId });

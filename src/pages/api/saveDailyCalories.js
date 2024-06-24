@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     userId == null || carbs == null || protein == null || fat == null || calories == null || date == null ||
     maxCarbs == null || maxProtein == null || maxFat == null || maxCalories == null
   ) {
-    console.log('Missing required fields', { userId, carbs, protein, fat, calories, date, maxCarbs, maxProtein, maxFat, maxCalories });
+    
     return res.status(400).json({ error: 'Missing required fields' });
   }
 

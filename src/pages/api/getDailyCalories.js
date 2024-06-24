@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   const collection = db.collection('dailyCalories');
 
     const data = await collection.find({ userId }).toArray();
-    console.log(data); 
+   
 
     res.status(200).json(data);
   } catch (error) {

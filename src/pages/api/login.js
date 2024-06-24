@@ -17,35 +17,34 @@ export default async function handler(req, res) {
     }
 
     try {
-      console.log("Connecting to database...");
+     
       const client = await dbConnect();
-      console.log("Connected to database");
+    
 
       const db = client.db('User');
-      console.log("Database connection established");
+     
 
       const normalizedEmail = email.trim().toLowerCase();
       const hashedEmail = hashEmail(normalizedEmail);
 
       const userLoginCollection = db.collection('userLogin');
-      console.log("Finding user...");
+   
       const userLogin = await userLoginCollection.findOne({ email: hashedEmail });
       if (!userLogin) {
-        console.log("User not found");
+       
         return res.status(400).json({ error: 'Invalid email or password' });
       }
 
-      console.log("Checking password...");
       const validPassword = await bcrypt.compare(password, userLogin.password);
       if (!validPassword) {
-        console.log("Invalid password");
+       
         return res.status(400).json({ error: 'Invalid email or password' });
       }
 
       const usersCollection = db.collection('users');
       const user = await usersCollection.findOne({ userId: userLogin.userId });
       if (!user) {
-        console.log("User not found in users collection");
+        
         return res.status(400).json({ error: 'User not found' });
       }
 
@@ -60,13 +59,6 @@ export default async function handler(req, res) {
         path: '/',
       }));
 
-      console.log("Cookie set:", serialize('sessionToken', sessionToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 60 * 60 * 24 * 7,
-        sameSite: 'strict',
-        path: '/',
-      }));
 
       res.status(200).json({ message: 'Login successful' });
     } catch (error) {

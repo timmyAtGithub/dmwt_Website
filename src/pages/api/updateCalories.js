@@ -22,7 +22,7 @@ async function handler(req, res) {
         { upsert: true }
       );
 
-      console.log('Update result:', result);
+      
 
       if (result.acknowledged) {
         res.status(200).json({ message: 'Kalorienwerte erfolgreich aktualisiert' });
