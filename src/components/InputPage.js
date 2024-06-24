@@ -42,7 +42,7 @@ const teilZuweisung = (tdee, gewuenscht) => {
   ];
 };
 
-const InputPage = ({ setData }) => {
+const InputPage = ({ setData, gewuenscht }) => {
   const [gewicht, setGewicht] = useState("");
   const [groesse, setGroesse] = useState("");
   const [alter, setAlter] = useState("");
@@ -68,7 +68,7 @@ const InputPage = ({ setData }) => {
     const bmr = berechnungBMR(gewichtValue, groesseValue, alterValue, geschlecht);
     const aktivfaktor = parseFloat(aktivitaetslevel);
     const tdee = berechnungTDEE(bmr, aktivfaktor);
-    const daten = teilZuweisung(tdee, 2); // assuming muscle gain is the default goal
+    const daten = teilZuweisung(tdee, gewuenscht);
 
     setChartData(daten);
 
