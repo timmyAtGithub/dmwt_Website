@@ -5,6 +5,7 @@
   height: 100vh;
   background-image: url('../../public/images/essen.jpg'); 
   background-position: center;
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.6); 
   overflow: hidden;
   position: relative;
