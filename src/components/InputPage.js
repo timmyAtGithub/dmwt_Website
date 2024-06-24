@@ -72,6 +72,10 @@ const InputPage = ({ setData }) => {
 
     setChartData(daten);
 
+    // Save data to localStorage
+    localStorage.setItem('macroData', JSON.stringify(daten));
+    localStorage.setItem('gewicht', gewichtValue);
+
     // Simulate a delay for the animation
     setTimeout(() => {
       setIsLoading(false);

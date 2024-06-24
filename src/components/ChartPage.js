@@ -34,6 +34,15 @@ const ChartPage = ({ data }) => {
     router.push('/meals');
   };
 
+  useEffect(() => {
+    // Save macro data to localStorage
+    const macroData = data.map(item => ({
+      name: item.name,
+      value: item.value
+    }));
+    localStorage.setItem('macroData', JSON.stringify(macroData));
+  }, [data]);
+
   return (
     <div className={`${styles.container} ${styles.backgroundImage}`}>
       <h1>Deine Kalorien</h1>

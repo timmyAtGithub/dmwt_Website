@@ -12,21 +12,32 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('/api/register', { email, password, vorname, nachname });
+      const macroData = JSON.parse(localStorage.getItem('macroData'));
+      const gewicht = parseFloat(localStorage.getItem('gewicht'));
+
+      const response = await axios.post('/api/register', { 
+        email, 
+        password, 
+        vorname, 
+        nachname, 
+        macroData, 
+        gewicht 
+      });
+
       const userId = response.data.userId;
 
-      // Session token and data retrieval
-      const sessionData = JSON.parse(localStorage.getItem('sessionToken'));
-      const macroData = sessionData.macroData;
-      const gewicht = sessionData.gewicht;
+      const totalCalories = macroData.reduce((acc, item) => acc + item.value, 0);
+      const protein = macroData.find(item => item.name === 'Proteine')?.value || 0;
+      const fat = macroData.find(item => item.name === 'Fette')?.value || 0;
+      const carbs = macroData.find(item => item.name === 'Kohlenhydrate')?.value || 0;
 
       // Save calorie data
       await axios.post('/api/saveCaloriesData', {
         userId,
-        calories: macroData.reduce((acc, item) => acc + item.value, 0),
-        protein: macroData.find(item => item.name === 'Proteine').value,
-        fat: macroData.find(item => item.name === 'Fette').value,
-        carbs: macroData.find(item => item.name === 'Kohlenhydrate').value
+        calories: totalCalories,
+        protein: protein,
+        fat: fat,
+        carbs: carbs
       });
 
       // Save weight data
@@ -38,15 +49,17 @@ const Register = () => {
 
       alert('Registrierung erfolgreich und Daten gespeichert');
       localStorage.removeItem('sessionToken'); // Remove session token after use
+      localStorage.removeItem('macroData'); // Remove macro data after use
+      localStorage.removeItem('gewicht'); // Remove gewicht after use
       router.push('/loginPage');
     } catch (error) {
       console.error('Error during registration:', error);
       alert('Fehler bei der Registrierung');
     }
   };
+
   useEffect(() => {
     document.body.classList.add(styles.noScroll);
-   
   }, []);
 
   return (
