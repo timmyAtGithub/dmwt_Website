@@ -11,22 +11,9 @@
   max-height: 90%;
   overflow: auto;
   display: flex;
+  
   flex-direction: row; /* Nebeneinander anordnen */
   gap: 20px; /* Abstand zwischen Bild und Text */
-}
-
-.modalImg {
-  height: 400px;
-  width: 400px;
-  border-radius: 10px;
-}
-
-.modalText {
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
 }
 
 .modalBackdrop {
@@ -58,21 +45,22 @@
 }
 
 .modalImg {
-  width: 50%;
-  height: auto;
+  width: 30vw;
+  height: 30vw;
   max-height: 500px;
   border-radius: 8px;
 }
 
 .modalText {
   text-align: left;
-  width: 50%;
+  width: 30vw;
   color: white;
   overflow-y: auto;
 }
 
 .modalText h2, .modalText p {
-  margin: 10px 0;
+  margin: 1% 1%;
+  
 }
 
 .modalText button {
@@ -83,11 +71,13 @@
   border-radius: 4px;
   cursor: pointer;
   width: 80%; /* Button width */
+  
 }
 
 .modalText button:first-of-type {
   background-color: #007BFF;
   color: white;
+  
 }
 
 .modalText button:first-of-type:hover {
@@ -122,7 +112,6 @@
   }
 
   .modalText {
-    padding-top: 10%;
     width: 100%;
     text-align: center;
   }

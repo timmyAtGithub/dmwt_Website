@@ -12,7 +12,8 @@ const Modal = ({ dish, onClose, onEatToday, onToggleFavorite, isFavorite }) => {
         <div className={styles.modalText}>
           <h2>{dish.namegericht}</h2>
           <p>{dish.textbeschreibung}</p>
-          <p>Kohlenhydrate: {dish.kolenhydrate}g</p>
+          <p>{dish.textrezept}</p>
+          <p>Kohlenhydrate: {dish.kohlenhydrate}g</p>
           <p>Fette: {dish.fette}g</p>
           <p>Eiweiß: {dish.eiweiß}g</p>
           <p>Kalorien: {dish.kalorien}kcal</p>
