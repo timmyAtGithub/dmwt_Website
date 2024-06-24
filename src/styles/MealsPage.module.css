@@ -43,7 +43,8 @@
 /* Mobile Version */
 @media (max-width: 768px) {
     .app {
-        padding-top: 70px
+        padding-top: 70px;
+        justify-content: center;
     }
 
     .navbar {
