@@ -1,70 +1,70 @@
 .registerBar {
-    position: fixed;
-    bottom: -25px;
-    left: 0;
-    right: 0;
-    margin: 0 0px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1000;
-    height: 30%;
+  position: fixed;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  margin: 0;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px; 
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  z-index: 1000;
+  height: 15%; 
+}
+
+.registerBar h2 {
+  margin: 5px 0; 
+  font-size: 18px; 
+}
+
+.registerBar p {
+  margin: 5px 0; 
+  font-size: 14px;
+}
+
+.registerButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #aa0000;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+  margin: 5px 0;
+}
+
+.registerButton:hover {
+  background-color: #cc0000;
+}
+
+
+@media (max-width: 768px) {
+  .registerBar {
+    bottom: 0;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 0;
   }
-  
-  .registerBar h2 {
-    margin: 10px 0;
-  }
-  
-  .registerBar p {
-    margin: 10px 0;
-  }
-  
+
   .registerButton {
-    padding: 10px 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .registerBar h2 {
     font-size: 16px;
-    top: 10%;
-    border: none;
-    border-radius: 4px;
-    background-color: #aa0000;
-    color: white;
-    cursor: pointer;
-    align-self: center;
-    margin-bottom: 10vw;
+    margin: 3px 0;
   }
-  
-  .registerButton:hover {
-    background-color: #cc0000;
+
+  .registerBar p {
+    font-size: 14px;
+    margin: 3px 0;
   }
-  
-  /* Mobile Version */
-  @media (max-width: 768px) {
-    .registerBar {
-      bottom: 0;
-      height: auto;
-      padding: 10px;
-      border-radius: 0;
-    }
-  
-    .registerButton {
-      padding: 10px 15px;
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-  
-    .registerBar h2 {
-      font-size: 18px;
-      margin: 5px 0;
-    }
-  
-    .registerBar p {
-      font-size: 14px;
-      margin: 5px 0;
-    }
-  }
-  
+}

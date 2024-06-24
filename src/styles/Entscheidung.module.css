@@ -1,3 +1,4 @@
+
 .entscheidung {
   margin: 0;
   padding: 0;
@@ -40,6 +41,8 @@
 }
 
 .image {
+  width: 300px; 
+  height: 552px; 
   width: 300px; 
   height: 552px;
   border-radius: 10px;
@@ -132,6 +135,7 @@
   bottom: calc(100% + 20px); 
 }
 
+
 .zwischen-text {
   color: white;
   padding: 10px 20px;
@@ -172,6 +176,31 @@
     font-size: 4vw;
   }
 
+  .text-box {
+    width: 80vw; 
+    height: auto;
+    transform: none;
+    position: absolute;
+  }
+
+  .image-container.active .text-box {
+    top: auto;
+    bottom: auto;
+    transform: none;
+    position: absolute;
+  }
+
+  .image-container.active.left .text-box {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .image-container.active.right .text-box {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   .weiter-button {
     width:  70vw; 

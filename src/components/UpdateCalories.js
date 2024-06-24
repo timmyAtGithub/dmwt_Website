@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import styles from '../styles/UpdateCalories.module.css'; // Import the new CSS file
+import styles from '../styles/UpdateCalories.module.css'; 
 
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
@@ -72,7 +72,6 @@ const UpdateCalories = () => {
 
     setChartData(daten);
 
-    // Save data to localStorage
     localStorage.setItem('macroData', JSON.stringify(daten));
     localStorage.setItem('gewicht', gewichtValue);
 

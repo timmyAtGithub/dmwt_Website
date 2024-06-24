@@ -11,12 +11,12 @@
   max-height: 90%;
   overflow: auto;
   display: flex;
-  flex-direction: row; /* Nebeneinander anordnen */
-  gap: 20px; /* Abstand zwischen Bild und Text */
+  flex-direction: row; 
+  gap: 20px; 
 }
 
 .modalImg {
-  /* Maximalbreite des Bildes */
+  
   height: 400px;
   width: 400px;
   border-radius: 10px;
@@ -45,7 +45,7 @@
 }
 
 .modalContent {
-  background: rgba(0, 0, 0, 0.9); /* Slightly less transparent background */
+  background: rgba(0, 0, 0, 0.9); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -98,13 +98,13 @@
 }
 
 .modalVideo {
-  width: 100%; /* Adjusted from 100% to 60% */
-  height: 550px; /* Adjusted from 400px to 500px */
+  width: 100%; 
+  height: 550px; 
   border: none;
 }
 
 .modalText {
-  margin-left: 20px; /* Added margin to separate the text from the video */
+  margin-left: 20px; 
 }
 
 .modalText h2 {
@@ -115,7 +115,7 @@
   margin-bottom: 10px;
 }
 
-/* Mobile specific styles */
+
 @media (max-width: 768px) {
   .modalContent {
       flex-direction: column;
@@ -125,7 +125,7 @@
   .modalImg {
       width: 90vw;
       height: auto;
-      max-height: 60vh; /* Adjusted height for portrait layout */
+      max-height: 60vh; 
       margin-bottom: 10px;
   }
 
@@ -134,13 +134,13 @@
       text-align: center;
       overflow-y: auto;
       max-height: 50vh;
-      margin-left: 0; /* Remove margin-left for mobile */
+      margin-left: 0; 
   }
 
   .modalVideo {
-      width: 90vw; /* Width relative to viewport */
+      width: 90vw; 
       height: auto;
-      max-height: 30vh; /* Smaller height for mobile layout */
+      max-height: 30vh;
       margin-bottom: 10px;
   }
 

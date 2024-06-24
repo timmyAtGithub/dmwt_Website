@@ -1,4 +1,4 @@
-/* Background image for the entire body */
+
 .inputbody {
   background-image: url('../../public/images/blackbackg.jpg');
   background-size: cover;
@@ -17,7 +17,7 @@
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7); /* Add transparency to the background */
+  background-color: rgba(0, 0, 0, 0.7); 
   border-radius: 10px;
   margin: auto;
   display: flex;
@@ -75,7 +75,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Mobile Version */
+
 @media (max-width: 600px) {
   .container {
     padding: 10px;

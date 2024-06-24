@@ -15,7 +15,7 @@ async function handler(req, res) {
       const weightData = {
         userId,
         weight,
-        date: new Date(date) // Ensure the date is stored as a Date object
+        date: new Date(date)
       };
 
       await weightCollection.insertOne(weightData);

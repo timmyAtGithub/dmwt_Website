@@ -1,4 +1,4 @@
-// pages/loginPage.js
+
 import Login from "@/components/Login";
 
 const LoginPage = ({ setUser }) => {

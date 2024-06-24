@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import styles from '../styles/Register.module.css'; // Separate CSS module for styling
+import styles from '../styles/Register.module.css'; 
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +31,7 @@ const Register = () => {
       const fat = macroData.find(item => item.name === 'Fette')?.value || 0;
       const carbs = macroData.find(item => item.name === 'Kohlenhydrate')?.value || 0;
 
-      // Save calorie data
+      
       await axios.post('/api/saveCaloriesData', {
         userId,
         calories: totalCalories,
@@ -40,7 +40,7 @@ const Register = () => {
         carbs: carbs
       });
 
-      // Save weight data
+      
       await axios.post('/api/saveWeightData', {
         userId,
         weight: gewicht,
@@ -48,9 +48,9 @@ const Register = () => {
       });
 
       alert('Registrierung erfolgreich und Daten gespeichert');
-      localStorage.removeItem('sessionToken'); // Remove session token after use
-      localStorage.removeItem('macroData'); // Remove macro data after use
-      localStorage.removeItem('gewicht'); // Remove gewicht after use
+      localStorage.removeItem('sessionToken');
+      localStorage.removeItem('macroData'); 
+      localStorage.removeItem('gewicht');
       router.push('/loginPage');
     } catch (error) {
       console.error('Error during registration:', error);

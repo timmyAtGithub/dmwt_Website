@@ -8,7 +8,7 @@
     color: white;
     background-color: #242424;
     position: relative;
-    padding-top: 70px; /* Adjust this value to the height of your navbar */
+    padding-top: 70px; 
     
 }
   
@@ -40,7 +40,7 @@
 }
 
   
-/* Mobile Version */
+
 @media (max-width: 768px) {
     .app {
         padding-top: 70px;

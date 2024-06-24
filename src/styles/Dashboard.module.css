@@ -169,7 +169,7 @@
   }
 }
 
-/* Media Query für Bildschirme mit einer Breite von 480px oder kleiner */
+
 @media (max-width: 480px) {
   .dashboardContent {
     flex-direction: column;
