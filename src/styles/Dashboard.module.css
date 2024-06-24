@@ -1,16 +1,15 @@
-/* Dashboard.module.css */
 .dashboardContainer {
   background-color: #242424;
-  color: #fff; /* Textfarbe geändert zu weiß */
+  color: #fff; 
   padding: 20px;
-  min-height: 100vh; /* Vollbildhöhe */
+  min-height: 100vh; 
   overflow-y: auto; 
-  padding-top: 70px;/* Vertikales Scrollen ermöglichen */
+  padding-top: 70px;
 }
 
 .dashboardContent {
   display: flex;
-  justify-content: space-between; /* Platz zwischen den Abschnitten */
+  justify-content: space-between; 
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -20,8 +19,8 @@
   border-radius: 8px;
   flex: 1;
   min-width: 300px;
-  max-width: 31%; /* Maximal ein Drittel der Breite */
-  overflow: hidden; /* Sicherstellen, dass Inhalt nicht überläuft */
+  max-width: 31%; 
+  overflow: hidden; 
 }
 
 .weightTrackerSmall {
@@ -82,7 +81,7 @@
   margin-right: 20px;
 }
 
-/* Media Query für Bildschirme mit einer Breite von 768px oder kleiner */
+
 @media (max-width: 768px) {
   .dashboardContent {
     flex-direction: column;

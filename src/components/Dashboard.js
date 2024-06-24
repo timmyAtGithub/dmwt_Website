@@ -13,7 +13,6 @@ const Dashboard = () => {
   const router = useRouter();
 
   useEffect(() => {
-
     const verifySession = async () => {
       try {
         const response = await axios.get('/api/verifySession', { withCredentials: true });
@@ -57,17 +56,12 @@ const Dashboard = () => {
       <h1>Hallo {user.vorname}</h1>
       <div className={styles.dashboardContent}>
         <div className={styles.dashboardSection}>
-          <Streak userId={user.userId} />
-          
+          <Streak userId={user.userId} style={{ marginBottom: '20px' }} />
+          <WeightTracker userId={user.userId} onShowBig={handleShowWeightTrackerBig} />
         </div>
         <div className={styles.dashboardSection}>
           <CountCalories userId={user.userId} />
-          
         </div>
-        <div className={styles.dashboardSection}>
-          <WeightTracker userId={user.userId} onShowBig={handleShowWeightTrackerBig} />
-        </div>
-        
       </div>
       {showWeightTrackerBig && (
         <div className={styles.weightTrackerBigOverlay}>
