@@ -20,7 +20,7 @@ const ChartPage = ({ data }) => {
       if (window.innerWidth <= 768) {
         setChartDimensions({ width: 300, height: 300 });
       } else {
-        setChartDimensions({ width: 650, height: 400 });
+        setChartDimensions({ width: 650, height: 450 });
       }
     };
 
@@ -52,7 +52,7 @@ const ChartPage = ({ data }) => {
               labelLine={false} // Optional: Disable label lines if they interfere
               label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name }) => {
                 const RADIAN = Math.PI / 180;
-                const radius = innerRadius + (outerRadius - innerRadius) * 1.2;
+                const radius = innerRadius + (outerRadius - innerRadius) * 1.6;
                 const x = cx + radius * Math.cos(-midAngle * RADIAN);
                 const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
