@@ -40,6 +40,9 @@ const Navbar = () => {
         <div className={styles.logo}>
           <img src="/images/Logo.png" alt="Logo" />
         </div>
+        <div className={styles.logotext}>
+          <img src="/images/logotext.png" alt="Logo" />
+        </div>
       </div>
       <div className={styles.centerSection}>
         {user && (
