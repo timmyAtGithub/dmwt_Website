@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from '../styles/Dashboard.module.css';
+import { useRouter } from 'next/router';
+import styles from '../styles/UpdateCalories.module.css'; // Import the new CSS file
 
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
@@ -50,6 +51,7 @@ const UpdateCalories = () => {
   const [ziel, setZiel] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState([]);
+  const router = useRouter();
 
   const handleAddData = async () => {
     const gewichtValue = parseFloat(gewicht);
@@ -77,7 +79,7 @@ const UpdateCalories = () => {
     // Simulate a delay for the animation
     setTimeout(() => {
       setIsLoading(false);
-      alert('Kalorien erfolgreich aktualisiert!');
+      router.push('/updateCalories'); // Redirect to the UpdateCalories page
     }, 2000);
   };
 

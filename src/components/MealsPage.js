@@ -116,12 +116,12 @@ const MealsPage = () => {
   const handleEatToday = async (dish) => {
     if (!user) return;
 
-    const { kolenhydrate, eiweiß, fette, kalorien } = dish;
+    const { kohlenhydrate, eiweiß, fette, kalorien } = dish;
 
     try {
       const response = await axios.post('/api/eatToday', {
         userId: user.userId,
-        carbs: parseFloat(kolenhydrate),
+        carbs: parseFloat(kohlenhydrate),
         protein: parseFloat(eiweiß),
         fat: parseFloat(fette),
         calories: parseFloat(kalorien),

@@ -1,0 +1,48 @@
+.container {
+    background-color: #242424;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .backgroundImage {
+    background-image: none;
+  }
+  
+  .CalCul {
+    margin: 20px 0;
+  }
+  
+  .totalCaloriesText {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .totalCaloriesLabel {
+    font-size: 16px;
+  }
+  
+  .button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .noScroll {
+    overflow: hidden;
+  }
+  
