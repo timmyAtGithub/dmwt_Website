@@ -1,15 +1,15 @@
 .dashboardContainer {
   background-color: #242424;
-  color: #fff; 
+  color: #fff;
   padding: 20px;
-  min-height: 100vh; 
-  overflow-y: auto; 
+  min-height: 100vh;
+  overflow-y: auto;
   padding-top: 70px;
 }
 
 .dashboardContent {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -19,8 +19,12 @@
   border-radius: 8px;
   flex: 1;
   min-width: 300px;
-  max-width: 31%; 
-  overflow: hidden; 
+  max-width: 31%;
+  overflow: hidden;
+}
+
+.streakSection {
+  margin-bottom: 20px;
 }
 
 .weightTrackerSmall {
