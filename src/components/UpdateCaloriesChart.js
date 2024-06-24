@@ -15,7 +15,7 @@ const UpdateCaloriesChart = ({ data }) => {
 
   useEffect(() => {
     document.body.classList.add(styles.noScroll);
-    setIsClient(true); // Marking component as client-side rendered
+    setIsClient(true);
 
     const updateChartDimensions = () => {
       if (window.innerWidth <= 768) {
@@ -32,7 +32,7 @@ const UpdateCaloriesChart = ({ data }) => {
   }, []);
 
   useEffect(() => {
-    // Save macro data to localStorage
+    
     const macroData = data.map(item => ({
       name: item.name,
       value: item.value
@@ -42,7 +42,7 @@ const UpdateCaloriesChart = ({ data }) => {
 
   const handleUpdateCalories = async () => {
     const macroData = JSON.parse(localStorage.getItem('macroData'));
-    const userId = "YOUR_USER_ID"; // Replace with actual userId
+    const userId = "YOUR_USER_ID"; 
 
     try {
       await axios.post('/api/updateCalories', {
@@ -64,18 +64,18 @@ const UpdateCaloriesChart = ({ data }) => {
     <div className={`${styles.container} ${styles.backgroundImage}`}>
       <h1>Deine Kalorien</h1>
       <div className={styles.CalCul}>
-        {isClient && ( // Render chart only on client side to avoid SSR issues
+        {isClient && (
           <PieChart width={chartDimensions.width} height={chartDimensions.height}>
-            {/* Outer Pie */}
+            {}
             <Pie
               data={data}
               dataKey="value"
               cx="50%"
               cy="50%"
-              innerRadius={chartDimensions.width / 4} // Inner radius of the outer ring
-              outerRadius={chartDimensions.width / 3.5} // Outer radius of the outer ring
-              fill="#8884d8" // Color of the outer ring
-              labelLine={false} // Optional: Disable label lines if they interfere
+              innerRadius={chartDimensions.width / 4} 
+              outerRadius={chartDimensions.width / 3.5} 
+              fill="#8884d8" 
+              labelLine={false} 
               label={({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name }) => {
                 const RADIAN = Math.PI / 180;
                 const radius = innerRadius + (outerRadius - innerRadius) * 1.6;

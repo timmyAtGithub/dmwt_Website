@@ -3,12 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('../../public/images/essen.jpg'); /* Hier ist das Hintergrundbild */
-  background-size: cover;
+  background-image: url('../../public/images/essen.jpg'); 
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.6); /* Hier wird die Transparenz auf das Hintergrundbild angewendet */
+  background-color: rgba(0, 0, 0, 0.6); 
   overflow: hidden;
-  position: relative; /* Füge dies hinzu */
+  position: relative;
 }
 
 .loginWrapper::before {
@@ -18,8 +17,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Hier die Transparenz anpassen */
-  z-index: 1; /* Füge dies hinzu */
+  background-color: rgba(0, 0, 0, 0.2); 
+  z-index: 1; 
 }
 
 .additionalText {
@@ -28,8 +27,8 @@
   cursor: pointer;
   font-size: 14px;
   text-decoration: underline;
-  z-index: 2; /* Füge dies hinzu */
-  position: relative; /* Füge dies hinzu */
+  z-index: 2; 
+  position: relative; 
 }
 
 .additionalText:hover {
@@ -78,14 +77,14 @@
 
 .loginContainer {
   width: 500px;
-  background-color: rgba(0, 0, 0, 0.6); /* Hintergrundfarbe mit Transparenz für bessere Lesbarkeit */
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 2; /* Füge dies hinzu */
-  position: relative; /* Füge dies hinzu */
+  z-index: 2; 
+  position: relative; 
 }
 
 .loginForm {

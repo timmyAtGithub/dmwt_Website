@@ -30,9 +30,9 @@
   opacity: 0;
 }
 
-/* Adjust font size based on screen width */
+
 .headerTitle {
-  font-size: 5vw; /* Using viewport width units for responsiveness */
+  font-size: 5vw; 
 }
 
 .noScroll {
@@ -40,10 +40,10 @@
   height: 100%;
 }
 
-/* Additional media query for larger screens */
+
 @media (max-width: 768px) {
   .headerTitle {
-    font-size: 3rem; /* Set a larger font size for bigger screens */
+    font-size: 3rem; 
   }
   .headerImage {
     height: 100%;

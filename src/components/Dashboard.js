@@ -5,7 +5,7 @@ import CountCalories from './CountCalories';
 import WeightTracker from './WeightTracker';
 import WeightTrackerBig from './WeightTrackerBig';
 import Streak from './Streak';
-import UpdateCalories from './UpdateCalories'; // Import the new UpdateCalories component
+import UpdateCalories from './UpdateCalories'; 
 import styles from '../styles/Dashboard.module.css';
 
 const Dashboard = () => {
@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     return () => {
       localStorage.removeItem('reloaded');
-      document.body.classList.remove(styles.noScroll); // Entfernen Sie die Klasse beim Verlassen der Komponente
+      document.body.classList.remove(styles.noScroll);
     };
   }, [router]);
 

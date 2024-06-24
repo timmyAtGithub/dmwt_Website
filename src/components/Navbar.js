@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import useRouter
+import { useRouter } from 'next/router'; 
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faHome, faDumbbell } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter(); 
 
   useEffect(() => {
     const verifySession = async () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {

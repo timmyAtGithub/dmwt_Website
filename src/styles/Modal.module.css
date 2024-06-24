@@ -13,34 +13,34 @@
 }
 
 .modalContent {
-  background: rgba(0, 0, 0, 0.9); /* Slightly less transparent background */
+  background: rgba(0, 0, 0, 0.9); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start; 
   gap: 20px;
-  width: 95%; /* Set width to 95% of the viewport */
+  width: 95%; 
   max-height: 90%;
-  overflow: hidden; /* Hide the scrollbar */
+  overflow: hidden; 
 }
 
 .modalImg {
   width: 30vw;
-  height: 60vw; /* Adjusted height for a portrait layout */
+  height: 60vw; 
   max-height: 500px;
   border-radius: 8px;
-  object-fit: cover; /* Ensure the image covers the entire container */
+  object-fit: cover;
 }
 
 .modalText {
   text-align: left;
-  width: 60%; /* Adjusted width for larger text area */
+  width: 60%; 
   color: white;
   overflow-y: auto;
-  max-height: 90%; /* Prevent the text from exceeding modal height */
-  padding-right: 10px; /* Add some padding to avoid text touching the edge */
+  max-height: 90%; 
+  padding-right: 10px; 
 }
 
 .modalText h1, .modalText h2, .modalText p {
@@ -54,7 +54,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 80%; /* Button width */
+  width: 80%; 
 }
 
 .modalText button:first-of-type {
@@ -76,7 +76,7 @@
   color: red;
 }
 
-/* Mobile specific styles */
+
 @media (max-width: 768px) {
   .modalContent {
     flex-direction: column;
@@ -86,7 +86,7 @@
   .modalImg {
     width: 90vw;
     height: auto;
-    max-height: 60vh; /* Adjusted height for portrait layout */
+    max-height: 60vh;
     margin-bottom: 10px;
   }
 

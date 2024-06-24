@@ -2,20 +2,19 @@
   background-image: url('../../public/images/orange.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh; /* Set the minimum height of the background to the full screen height */
+  min-height: 100vh; 
 }
-
 .container {
   max-width: 400px;
-  margin: auto; /* Automatically center horizontally */
+  margin: auto;
   text-align: center;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
-  position: relative; /* Relative position for centered display */
-  transform: translateY(20%); /* Adjust vertical alignment */
+  position: relative;
+  transform: translateY(20%); 
 }
 
 .noScroll {
@@ -24,14 +23,14 @@
 }
 
 .input {
-  width: calc(100% - 20px); /* Width minus the inner padding */
+  width: calc(100% - 20px);
   background-color: #333;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid #333;
   border-radius: 5px;
-  color: #fff; /* White text color */
+  color: #fff;
 }
 
 .button {
@@ -50,22 +49,22 @@
   background-color: #cc0000;
 }
 
-/* Mobile Version */
+
 @media (max-width: 768px) {
   .container {
-    max-width: 90%; /* Adjust the max-width for mobile */
-    padding: 15px; /* Reduce padding for mobile */
+    max-width: 90%;
+    padding: 15px;
     transform: translateY(10%);
-    padding-top: 70px; /* Adjust vertical alignment for mobile */
-  }
+    padding-top: 70px;
 
   .input {
-    font-size: 14px; /* Slightly smaller font size for mobile */
-    padding: 8px; /* Reduce padding for mobile */
+    font-size: 14px;
+    padding: 8px;
   }
 
   .button {
-    font-size: 16px; /* Slightly smaller font size for mobile */
-    padding: 8px 16px; /* Reduce padding for mobile */
+    font-size: 16px;
+    padding: 8px 16px;
   }
+}
 }

@@ -14,39 +14,39 @@ async function handler(req, res) {
       const database = client.db('User');
       const userLoginCollection = database.collection('userLogin');
       const usersCollection = database.collection('users');
-      const caloriesEatenCollection = database.collection('caloriesEaten'); // Define the caloriesEaten collection
+      const caloriesEatenCollection = database.collection('caloriesEaten'); 
       const weightCollection = database.collection('weight');
 
       const hashedPassword = await bcrypt.hash(password, 10);
       const hashedEmail = crypto.createHash('sha256').update(email).digest('hex');
 
-      // Create new userLogin entry without userId
+     
       const newUserLogin = {
         email: hashedEmail,
         password: hashedPassword,
       };
 
-      // Insert the new userLogin and get the insertedId
+      
       const resultUserLogin = await userLoginCollection.insertOne(newUserLogin);
-      const userId = resultUserLogin.insertedId.toString(); // Convert to string
+      const userId = resultUserLogin.insertedId.toString(); 
 
-      // Update newUserLogin with userId as a string
+     
       await userLoginCollection.updateOne(
         { _id: resultUserLogin.insertedId },
         { $set: { userId: userId } }
       );
 
-      // Create new users entry
+      
       const newUser = {
         vorname,
         nachname,
-        userId: userId, // Store userId as a string
+        userId: userId, 
       };
       await usersCollection.insertOne(newUser);
 
-      // Create new caloriesEaten entry
+     
       const caloriesEat = {
-        userId: userId, // Store userId as a string
+        userId: userId, 
         calories: 0,
         carbs: 0,
         fat: 0,
@@ -54,9 +54,9 @@ async function handler(req, res) {
       };
       await caloriesEatenCollection.insertOne(caloriesEat);
 
-      // Create new weight entry
+     
       const weightData = {
-        userId: userId, // Store userId as a string
+        userId: userId, 
         weight: gewicht,
         date: new Date().toISOString()
       };

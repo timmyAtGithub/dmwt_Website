@@ -24,7 +24,7 @@ const Home = () => {
 
     verifySession();
 
-    // Cleanup function to remove the class when the component is unmounted
+   
     return () => {
       document.body.classList.remove(styles.noScroll);
     };
@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <div className={styles.homeContainer}>
-      {/* Header-Elemente der Home-Seite */}
+      {}
       <div className={styles.headerImageContainer}>
         <img src="./images/home.jpg" alt="Header" className={styles.headerImage} />
         <div className={styles.headerTitleContainer}>

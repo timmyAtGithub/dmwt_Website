@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import Link from 'next/link'; // Hinzufügen des Link-Imports
+import Link from 'next/link'; 
 import styles from '../styles/Login.module.css';
 
 const Login = ({ setUser }) => {

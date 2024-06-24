@@ -10,7 +10,7 @@ export async function addSessionToken(sessionToken, userId) {
       sessionToken,
       userId,
       createdAt: new Date(),
-      expiresAt: new Date(Date.now() + 60 * 60 * 24 * 7 * 1000), // 1 week expiration
+      expiresAt: new Date(Date.now() + 60 * 60 * 24 * 7 * 1000),
     });
 
     console.log("Session token added to database");

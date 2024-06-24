@@ -6,7 +6,6 @@ export default async function handler(req, res) {
     const db = client.db('User');
     const collection = db.collection('dailyCalories');
 
-    // Beispiel-Testdaten
     const testData = [
       {
         userId: '66771bed263898b6ac2984f4',
@@ -44,7 +43,7 @@ export default async function handler(req, res) {
         maxFat: 504.273125,
         maxCalories: 2521.365625,
       },
-      // Fügen Sie weitere Testdaten hinzu
+    
     ];
 
     await collection.insertMany(testData);

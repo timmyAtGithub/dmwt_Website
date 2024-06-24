@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../styles/WeightTrackerBig.module.css';
 
-// Import the necessary modules from Chart.js
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,7 +16,7 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register the components in ChartJS
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -65,7 +65,7 @@ const WeightTrackerBig = ({ userId, onClose }) => {
     }
   };
 
-  // Format date for display
+  
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
@@ -73,11 +73,11 @@ const WeightTrackerBig = ({ userId, onClose }) => {
 
   const handleClose = () => {
     setIsShrinking(true);
-    setTimeout(onClose, 300); // Wait for the shrink animation to complete before calling onClose
+    setTimeout(onClose, 300); 
   };
 
   const data = {
-    labels: weights.map(w => formatDate(w.date)), // Use formatted dates as labels
+    labels: weights.map(w => formatDate(w.date)),
     datasets: [
       {
         label: 'Gewicht',

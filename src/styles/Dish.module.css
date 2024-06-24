@@ -46,17 +46,16 @@
     align-self: flex-end;
 }
 
-/* Mobile Version */
+
 @media (max-width: 768px) {
     .dish {
-        width: calc(100% - 20px); /* Full width with some margin */
-        min-width: auto;
+        width: calc(100% - 20px); 
         max-width: none;
-        margin: 10px; /* Margin around each dish item */
+        margin: 10px; 
     }
   
     .dishImg {
-        height: 200px; /* Adjust the image height for mobile */
+        height: 200px; 
     }
   
     .dishContent {
@@ -64,6 +63,6 @@
     }
   
     .favoriteButton {
-        font-size: 20px; /* Slightly smaller button for mobile */
+        font-size: 20px; 
     }
 }

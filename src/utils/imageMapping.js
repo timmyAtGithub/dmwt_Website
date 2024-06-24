@@ -22,7 +22,6 @@ const imageMapping = {
     '6676a903710f972384a1c113': 'wurstchen.jpeg',
     '6676a8eb710f972384a1c111': 'spargelsuppe.jpeg',
     '6676a8f8710f972384a1c112': 'tomatensuppe.jpeg',
-
     '66787200bd51feeca2244bbf': 'pushup.jpeg',
     '66787200bd51feeca2244bc0': 'squat.jpeg',
     '66787200bd51feeca2244bc1': 'deadlift.jpeg',
@@ -32,14 +31,12 @@ const imageMapping = {
     '66787200bd51feeca2244bc5': 'plank.jpeg',
     '66787200bd51feeca2244bc6': 'shoulderpress.jpeg',
     '66787200bd51feeca2244bcc': 'latpulldown.jpeg',
-
     '66787200bd51feeca2244bd2': 'exer1.jpeg',
     '66787200bd51feeca2244bd1': 'exer2.jpeg',
     '66787200bd51feeca2244bd0': 'exer3.jpeg',
     '66787200bd51feeca2244bcf': 'exer4.jpeg',
     '66787200bd51feeca2244bce': 'exer5.jpeg',
     '66787200bd51feeca2244bcd': 'exer3.jpeg',
-
     '66787200bd51feeca2244bcb': 'exer1.jpeg',
     '66787200bd51feeca2244bca': 'exer2.jpeg',
     '66787200bd51feeca2244bc9': 'exer3.jpeg',

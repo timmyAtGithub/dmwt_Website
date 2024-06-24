@@ -1,4 +1,4 @@
-// components/ProtectedRoute.js
+
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -26,7 +26,7 @@ const ProtectedRoute = ({ children }) => {
   }, [router]);
 
   if (loading) {
-    return <div>Loading...</div>; // Oder ein anderer Ladeindikator
+    return <div>Loading...</div>; 
   }
 
   return children;

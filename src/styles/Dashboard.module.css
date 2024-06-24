@@ -1,4 +1,4 @@
-/* Dashboard.module.css */
+
 .dashboardContainer {
   background-color: #242424;
   color: #fff; 
@@ -166,7 +166,7 @@
   }
 }
 
-/* Media Query für Bildschirme mit einer Breite von 480px oder kleiner */
+
 @media (max-width: 480px) {
   .dashboardContent {
     flex-direction: column;

@@ -12,7 +12,6 @@ export default async function handler(req, res) {
       const client = await dbConnect();
       const db = client.db('User');
 
-      // Check and reset calories if a new day has started
       const settingsCollection = db.collection('settings');
       const caloriesEatenCollection = db.collection('caloriesEaten');
       const currentDate = new Date().toISOString().split('T')[0];
@@ -30,7 +29,6 @@ export default async function handler(req, res) {
         );
       }
 
-      // Fetch calories data
       const caloriesData = await db.collection('calories').findOne({ userId });
       const caloriesEatenData = await caloriesEatenCollection.findOne({ userId });
 

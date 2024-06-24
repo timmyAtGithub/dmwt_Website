@@ -10,22 +10,22 @@ export default async function handler(req, res) {
       const collection = db.collection('caloriesEaten');
       console.log(userId);
 
-      // Fetch the existing data for the user
+      
       const existingData = await collection.findOne({ userId });
 
-      // Ensure existingData and its properties are defined
+      
       const existingCarbs = existingData?.carbs || 0;
       const existingProtein = existingData?.protein || 0;
       const existingFat = existingData?.fat || 0;
       const existingCalories = existingData?.calories || 0;
 
-      // Calculate the new values by adding the existing and incoming values
+     
       const newCarbs = existingCarbs + carbs;
       const newProtein = existingProtein + protein;
       const newFat = existingFat + fat;
       const newCalories = existingCalories + calories;
 
-      // Update the user's calories data
+   
       await collection.updateOne(
         { userId },
         {

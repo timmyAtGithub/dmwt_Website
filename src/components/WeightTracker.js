@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import styles from '../styles/WeightTracker.module.css';
 
-// Import the necessary modules from Chart.js
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,7 +15,7 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register the components in ChartJS
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -43,14 +43,14 @@ const WeightTracker = ({ userId, onShowBig }) => {
     }
   };
 
-  // Format date for display
+  
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   const data = {
-    labels: weights.map(w => formatDate(w.date)), // Use formatted dates as labels
+    labels: weights.map(w => formatDate(w.date)), 
     datasets: [
       {
         label: 'Gewicht',

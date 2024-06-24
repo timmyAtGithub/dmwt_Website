@@ -24,16 +24,16 @@ export default async function handler(req, res) {
     if (method === 'POST') {
       const existingFav = await favsCollection.findOne({ userId, exerciseId });
       if (existingFav) {
-        // If the favorite exists, remove it
+        
         console.log(`Removing favorite for userId: ${userId}, exerciseId: ${exerciseId}`);
         await favsCollection.deleteOne({ userId, exerciseId });
       } else {
-        // Otherwise, add it
+       
         console.log(`Adding favorite for userId: ${userId}, exerciseId: ${exerciseId}`);
         await favsCollection.insertOne({ userId, exerciseId });
       }
 
-      // Fetch updated list of favorites
+      
       const updatedFavorites = await favsCollection.find({ userId }).toArray();
       const favoriteExerciseId = updatedFavorites.map(fav => fav.exerciseId);
 

@@ -11,29 +11,29 @@ const Streak = ({ userId }) => {
         const response = await axios.get('/api/getDailyCalories', { params: { userId } });
         const dailyCalories = response.data;
 
-        // Log the fetched dailyCalories to debug
+        
         console.log('Fetched dailyCalories:', dailyCalories);
 
-        // Calculate the streak
+       
         let currentStreak = 0;
         let maxStreak = 0;
         let lastDate = null;
-        const currentDate = new Date().setHours(0, 0, 0, 0); // Set current date to midnight for accurate comparison
+        const currentDate = new Date().setHours(0, 0, 0, 0); 
 
         dailyCalories.forEach(entry => {
-          const entryDate = new Date(entry.date).setHours(0, 0, 0, 0); // Set entry date to midnight
+          const entryDate = new Date(entry.date).setHours(0, 0, 0, 0); 
 
           if (entryDate >= currentDate) {
-            return; // Ignore current and future dates
+            return; 
           }
 
           const { carbs, protein, fat, calories, maxCarbs, maxProtein, maxFat, maxCalories } = entry;
           const inGreenZone = (value, max) => {
-            if (!max) return false; // Ensure max is not null or undefined
+            if (!max) return false; 
             return value >= 0.9 * max && value <= 1.1 * max;
           };
 
-          // Log the values to debug
+         
           console.log(`Date: ${entry.date}`);
           console.log(`Carbs: ${carbs} (Expected: ${maxCarbs ? maxCarbs / 4 * 0.9 : 'N/A'}-${maxCarbs ? maxCarbs / 4 * 1.1 : 'N/A'})`);
           console.log(`Protein: ${protein} (Expected: ${maxProtein ? maxProtein / 4 * 0.9 : 'N/A'}-${maxProtein ? maxProtein / 4 * 1.1 : 'N/A'})`);
@@ -48,17 +48,17 @@ const Streak = ({ userId }) => {
           console.log(`isCarbsGreen: ${isCarbsGreen}, isProteinGreen: ${isProteinGreen}, isFatGreen: ${isFatGreen}, isCaloriesGreen: ${isCaloriesGreen}`);
 
           if (isCarbsGreen && isProteinGreen && isFatGreen && isCaloriesGreen) {
-            // Check if the date difference is 1 day (86400000 ms)
-              currentStreak += 1; // Increment current streak if days are consecutive
             
-            // Update the last date to the current entry's date
+              currentStreak += 1; 
+            
+            
           } else {
-            currentStreak = 0; // Reset current streak if any of the values are not in the green zone
+            currentStreak = 0; 
             lastDate = null;
           }
 
-         // Track the maximum streak
-          console.log(`Current Streak: ${currentStreak}`); // Log current and max streak
+         
+          console.log(`Current Streak: ${currentStreak}`); 
         });
 
         setStreak(currentStreak);
