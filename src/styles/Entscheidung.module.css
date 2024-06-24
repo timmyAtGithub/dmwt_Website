@@ -1,4 +1,3 @@
-/* Global styles for the component */
 .entscheidung {
   margin: 0;
   padding: 0;
@@ -12,7 +11,7 @@
   align-items: center;
 }
 
-/* Container styles */
+
 .entscheidung-container {
   display: flex;
   justify-content: center;
@@ -23,12 +22,12 @@
   max-width: 100%;
 }
 
-/* Blur background for inactive images */
+
 .blur-background .image-container:not(.active) {
   filter: blur(5px);
 }
 
-/* Image container styles */
+
 .image-container {
   position: relative;
   cursor: pointer;
@@ -41,25 +40,25 @@
 }
 
 .image {
-  width: 300px; /* Decreased width by 30px */
-  height: 552px; /* Adjusted height to maintain aspect ratio */
+  width: 300px; 
+  height: 552px;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-/* Styles for inactive images */
+
 .image-container:not(.active) .image {
   opacity: 0.5;
 }
 
-/* Styles for active images */
+
 .image-container.active .image {
   transform: scale(1.05);
   opacity: 1;
 }
 
-/* Caption styles */
+
 .caption {
   position: absolute;
   bottom: 20px;
@@ -72,7 +71,7 @@
   font-size: 1.2em;
 }
 
-/* Text box styles */
+
 .text-box {
   display: none;
   position: absolute;
@@ -87,12 +86,12 @@
   color: white;
 }
 
-/* Display text box for active images */
+
 .image-container.active .text-box {
   display: block;
 }
 
-/* Specific styles for left and right active images */
+
 .image-container.active.left .text-box {
   left: calc(100% + 20px);
   right: auto;
@@ -103,7 +102,7 @@
   left: auto;
 }
 
-/* Button styles */
+
 .weiter-button {
   display: none;
   padding: 10px 20px;
@@ -115,25 +114,24 @@
   cursor: pointer;
   z-index: 3;
   position: relative;
-  left: 50%; /* Zentriert */
+  left: 50%; 
   transform: translateX(-50%);
 }
 
-/* Display button for active images */
+
 .image-container.active .weiter-button {
   display: block;
 }
 
-/* Specific styles for left and right active images */
+
 .image-container.active.left .weiter-button {
-  top: calc(100% + 20px); /* Button unter dem Text */
+  top: calc(100% + 20px);
 }
 
 .image-container.active.right .weiter-button {
-  bottom: calc(100% + 20px); /* Button über dem Text */
+  bottom: calc(100% + 20px); 
 }
 
-/* Zwischen-text styles */
 .zwischen-text {
   color: white;
   padding: 10px 20px;
@@ -144,7 +142,6 @@
   transform: translateY(-50%);
 }
 
-/* Mobile specific styles */
 @media (max-width: 768px) {
   .entscheidung-container {
     flex-direction: column;
@@ -167,7 +164,7 @@
   }
 
   .image {
-    width: 65vw; /* Width relative to viewport */
+    width: 65vw; 
     height: auto;
   }
 
@@ -175,46 +172,22 @@
     font-size: 4vw;
   }
 
-  .text-box {
-    width: 80vw; /* Width relative to viewport */
-    height: auto;
-    transform: none;
-    position: absolute;
-  }
-
-  .image-container.active .text-box {
-    top: auto;
-    bottom: auto;
-    transform: none;
-    position: absolute;
-  }
-
-  .image-container.active.left .text-box {
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .image-container.active.right .text-box {
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-  }
 
   .weiter-button {
-    width: 80vw; /* Width relative to viewport */
+    width:  70vw; 
     position: static;
     transform: none;
-    margin: 10px auto; /* Margin adjusted for center alignment */
+    margin: -20px auto; 
   }
 
   .image-container.active.left .weiter-button {
-    bottom: 10px; /* Button unter dem Text */
+    bottom: 100%; 
     top: auto;
   }
 
   .image-container.active.right .weiter-button {
-    top: 10px; /* Button über dem Text */
+    top: 100%; 
     bottom: auto;
+    
   }
 }

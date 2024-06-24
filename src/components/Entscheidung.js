@@ -36,10 +36,9 @@ const Entscheidung = () => {
             <p className={styles.caption}>Muskelaufbau</p>
             {activeImage === 'left' && (
               <>
-                <div className={styles['text-box']} style={{ top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }}>
-                  <p>Eine optimale Ernährung für den Muskelaufbau erfordert ausreichend Protein zur Gewebereparatur und -entwicklung. Kohlenhydrate bieten Energie für das Training, während gesunde Fette den Hormonhaushalt unterstützen. Qualitativ hochwertige Kalorien sind entscheidend für das Muskelwachstum und die Regeneration nach dem Training. Essen von Nährstoffen aus Obst, Gemüse und Getreide trägt zur Energie bei.</p>
+                
                   <button className={styles['weiter-button']} onClick={handleWeiterClick}>Weiter</button>
-                </div>
+                
               </>
             )}
           </div>
@@ -51,10 +50,9 @@ const Entscheidung = () => {
             <p className={styles.caption}>Abnehmen</p>
             {activeImage === 'right' && (
               <>
-                <div className={styles['text-box']} style={{ bottom: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)' }}>
-                  <p>Eine ausgewogene Ernährung mit Kaloriendefizit hilft, Körperfett zu reduzieren und das Erscheinungsbild zu verbessern. Ausreichend Protein erhält Muskelmasse, während gesunde Fette und komplexe Kohlenhydrate den Stoffwechsel unterstützen. Nährstoffreiche Lebensmittel wie Obst, Gemüse und Vollkornprodukte fördern das Wohlbefinden und den Gewichtsverlust, indem sie langanhaltende Energie liefern.</p>
+                
                   <button className={styles['weiter-button']} onClick={handleWeiterClick}>Weiter</button>
-                </div>
+                
               </>
             )}
           </div>

@@ -1,4 +1,3 @@
-/* Dashboard.module.css */
 .dashboardContainer {
   background-color: #242424;
   color: #fff; 
@@ -22,6 +21,10 @@
   min-width: 300px;
   max-width: 31%; 
   overflow: hidden; 
+}
+
+.streakSection {
+  margin-bottom: 20px; /* Adds space between the Streak and Weight components */
 }
 
 .weightTrackerSmall {
