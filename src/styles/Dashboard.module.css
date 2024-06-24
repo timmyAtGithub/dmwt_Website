@@ -1,15 +1,16 @@
+/* Dashboard.module.css */
 .dashboardContainer {
   background-color: #242424;
-  color: #fff;
+  color: #fff; 
   padding: 20px;
-  min-height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh; 
+  overflow-y: auto; 
   padding-top: 70px;
 }
 
 .dashboardContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -19,12 +20,8 @@
   border-radius: 8px;
   flex: 1;
   min-width: 300px;
-  max-width: 31%;
-  overflow: hidden;
-}
-
-.streakSection {
-  margin-bottom: 20px;
+  max-width: 31%; 
+  overflow: hidden; 
 }
 
 .weightTrackerSmall {
@@ -85,6 +82,78 @@
   margin-right: 20px;
 }
 
+.updateCaloriesContainer {
+  background-color: #161717;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.updateCaloriesContainer .container {
+  width: 100%;
+}
+
+.updateCaloriesContainer .formElement {
+  background-color: #242424;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  width: calc(100% - 20px);
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.updateCaloriesContainer .button {
+  background-color: #aa0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: calc(100% - 20px);
+}
+
+.updateCaloriesContainer .button:hover {
+  background-color: #cc0000;
+}
+
+.updateCaloriesContainer .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.updateCaloriesContainer .loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 @media (max-width: 768px) {
   .dashboardContent {
