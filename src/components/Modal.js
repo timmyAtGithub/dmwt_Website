@@ -27,10 +27,12 @@ const Modal = ({ dish, onClose, onEatToday, onToggleFavorite, isFavorite }) => {
           <p>Fette: {dish.fette}g</p>
           <p>Eiweiß: {dish.eiweiß}g</p>
           <p>Kalorien: {dish.kalorien}kcal</p>
-          <button onClick={onEatToday}>Heute gegessen</button>
-          <button onClick={(e) => { e.stopPropagation(); onToggleFavorite(dish._id); }}>
-            {isFavorite ? '❤️' : '🤍'}
-          </button>
+          <div className={styles.buttonContainer}>
+            <button className={`${styles.eatButton}`} onClick={onEatToday}>Heute gegessen</button>
+            <button className={`${styles.favoriteButton}`} onClick={(e) => { e.stopPropagation(); onToggleFavorite(dish._id); }}>
+              {isFavorite ? '❤️' : '🤍'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

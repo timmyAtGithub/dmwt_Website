@@ -7,7 +7,7 @@ const client = new MongoClient(uri);
 
 async function handler(req, res) {
   if (req.method === 'POST') {
-    const { email, password, vorname, nachname } = req.body;
+    const { email, password, vorname, nachname, macroData, gewicht } = req.body;
 
     try {
       await client.connect();
@@ -15,6 +15,7 @@ async function handler(req, res) {
       const userLoginCollection = database.collection('userLogin');
       const usersCollection = database.collection('users');
       const caloriesEatenCollection = database.collection('caloriesEaten'); // Define the caloriesEaten collection
+      const weightCollection = database.collection('weight');
 
       const hashedPassword = await bcrypt.hash(password, 10);
       const hashedEmail = crypto.createHash('sha256').update(email).digest('hex');
@@ -49,9 +50,17 @@ async function handler(req, res) {
         calories: 0,
         carbs: 0,
         fat: 0,
-        protein: 0,
+        protein: 0
       };
       await caloriesEatenCollection.insertOne(caloriesEat);
+
+      // Create new weight entry
+      const weightData = {
+        userId: userId, // Store userId as a string
+        weight: gewicht,
+        date: new Date().toISOString()
+      };
+      await weightCollection.insertOne(weightData);
 
       res.status(201).json({ userId });
     } catch (error) {
