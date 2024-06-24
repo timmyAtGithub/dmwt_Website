@@ -95,7 +95,6 @@ const WeightTrackerBig = ({ userId, onClose }) => {
         className={`${styles.weightTrackerBigContainer} ${isExpanding ? styles.expand : ''} ${isShrinking ? styles.shrink : ''}`}
         onClick={e => e.stopPropagation()}
       >
-        
         <button className={styles.closeButton} onClick={handleClose}>×</button>
         <div className={styles.weightChart}>
           <h2>Gewicht</h2>

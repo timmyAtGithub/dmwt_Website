@@ -2,6 +2,10 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import styles from '../styles/Inputpage.module.css';
 import ChartPage from './ChartPage';
+import Entscheidung from './Entscheidung';
+
+const gewuenscht=Entscheidung.gewuenscht;
+Entscheidung
 
 const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
   if (geschlecht === 'Mann') {
@@ -10,6 +14,7 @@ const berechnungBMR = (gewicht, groesse, alter, geschlecht) => {
     return (10 * gewicht) + (6.25 * groesse) - (5 * alter) - 161;
   }
 };
+
 
 const berechnungTDEE = (bmr, aktivfaktor) => {
   return bmr * aktivfaktor;

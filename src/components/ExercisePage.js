@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/ExercisePage.module.css';
 import ExerciseList from './ExerciseList';
 import ModalS from './ModalS';
-import FilterS from './FilterS';
+import FilterS from './Filters';
 
 const ExercisesPage = () => {
   const [exercises, setExercises] = useState([]);
