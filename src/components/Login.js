@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Link from 'next/link'; // Hinzufügen des Link-Imports
 import styles from '../styles/Login.module.css';
 
 const Login = ({ setUser }) => {
@@ -38,6 +39,10 @@ const Login = ({ setUser }) => {
     }
   };
 
+  const navigateToHome = () => {
+    router.push('/');
+  };
+
   return (
     <div className={styles.loginWrapper}>
       <div className={styles.loginInfo}>
@@ -66,6 +71,11 @@ const Login = ({ setUser }) => {
             />
           </div>
           <button onClick={handleLogin} className={styles.loginButton}>Login</button>
+          <Link href="/" legacyBehavior>
+            <a className={styles.additionalText} onClick={(navigateToHome) => console.log('Text clicked')}>
+              Jetzt Registrieren
+            </a>
+          </Link>
         </div>
       </div>
     </div>
