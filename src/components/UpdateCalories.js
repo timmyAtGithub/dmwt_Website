@@ -76,79 +76,68 @@ const UpdateCalories = () => {
     localStorage.setItem('macroData', JSON.stringify(daten));
     localStorage.setItem('gewicht', gewichtValue);
 
-    // Simulate a delay for the animation
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push('/updateCalories'); // Redirect to the UpdateCalories page
-    }, 2000);
+    // Redirect to the UpdateCalories page immediately without a delay
+    router.push('/updateCalories');
   };
 
   return (
     <div className={styles.updateCaloriesContainer}>
       <div className={styles.container}>
-        {!isLoading ? (
-          <>
-            <h1 className={styles.header}>Kalorienrechner</h1>
-            <input
-              className={styles.formElement}
-              type="text"
-              placeholder="Gewicht (kg)"
-              value={gewicht}
-              onChange={e => setGewicht(e.target.value)}
-            />
-            <input
-              className={styles.formElement}
-              type="text"
-              placeholder="Größe (cm)"
-              value={groesse}
-              onChange={e => setGroesse(e.target.value)}
-            />
-            <input
-              className={styles.formElement}
-              type="text"
-              placeholder="Alter"
-              value={alter}
-              onChange={e => setAlter(e.target.value)}
-            />
-            <select
-              className={styles.formElement}
-              value={geschlecht}
-              onChange={e => setGeschlecht(e.target.value)}
-            >
-              <option value="">Geschlecht</option>
-              <option value="Mann">Mann</option>
-              <option value="Frau">Frau</option>
-            </select>
-            <select
-              className={styles.formElement}
-              value={aktivitaetslevel}
-              onChange={e => setAktivitaetslevel(e.target.value)}
-            >
-              <option value="">Aktivitätslevel</option>
-              <option value="1.2">Sitzend (wenig oder keine Bewegung)</option>
-              <option value="1.375">Leicht aktiv (leichte Bewegung/Sport 1-3 Tage pro Woche)</option>
-              <option value="1.55">Mäßig aktiv (mäßige Bewegung/Sport 3-5 Tage pro Woche)</option>
-              <option value="1.725">Sehr aktiv (harte Bewegung/Sport 6-7 Tage pro Woche)</option>
-              <option value="1.9">Extrem aktiv (sehr harte Bewegung/Sport und körperliche Arbeit)</option>
-            </select>
-            <select
-              className={styles.formElement}
-              value={ziel}
-              onChange={e => setZiel(e.target.value)}
-            >
-              <option value="">Ziel</option>
-              <option value="2">Muskelaufbau</option>
-              <option value="1">Abnehmen</option>
-            </select>
-            <button className={`${styles.formElement} ${styles.button}`} onClick={handleAddData}>
-              Weiter
-            </button>
-          </>
-        ) : (
-          <div className={styles.overlay}>
-            <div className={styles.loader}></div>
-          </div>
-        )}
+        <h1 className={styles.header}>Kalorienrechner</h1>
+        <input
+          className={styles.formElement}
+          type="text"
+          placeholder="Gewicht (kg)"
+          value={gewicht}
+          onChange={e => setGewicht(e.target.value)}
+        />
+        <input
+          className={styles.formElement}
+          type="text"
+          placeholder="Größe (cm)"
+          value={groesse}
+          onChange={e => setGroesse(e.target.value)}
+        />
+        <input
+          className={styles.formElement}
+          type="text"
+          placeholder="Alter"
+          value={alter}
+          onChange={e => setAlter(e.target.value)}
+        />
+        <select
+          className={styles.formElement}
+          value={geschlecht}
+          onChange={e => setGeschlecht(e.target.value)}
+        >
+          <option value="">Geschlecht</option>
+          <option value="Mann">Mann</option>
+          <option value="Frau">Frau</option>
+        </select>
+        <select
+          className={styles.formElement}
+          value={aktivitaetslevel}
+          onChange={e => setAktivitaetslevel(e.target.value)}
+        >
+          <option value="">Aktivitätslevel</option>
+          <option value="1.2">Sitzend (wenig oder keine Bewegung)</option>
+          <option value="1.375">Leicht aktiv (leichte Bewegung/Sport 1-3 Tage pro Woche)</option>
+          <option value="1.55">Mäßig aktiv (mäßige Bewegung/Sport 3-5 Tage pro Woche)</option>
+          <option value="1.725">Sehr aktiv (harte Bewegung/Sport 6-7 Tage pro Woche)</option>
+          <option value="1.9">Extrem aktiv (sehr harte Bewegung/Sport und körperliche Arbeit)</option>
+        </select>
+        <select
+          className={styles.formElement}
+          value={ziel}
+          onChange={e => setZiel(e.target.value)}
+        >
+          <option value="">Ziel</option>
+          <option value="2">Muskelaufbau</option>
+          <option value="1">Abnehmen</option>
+        </select>
+        <button className={`${styles.formElement} ${styles.button}`} onClick={handleAddData}>
+          Weiter
+        </button>
       </div>
     </div>
   );

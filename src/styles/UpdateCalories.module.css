@@ -1,11 +1,12 @@
 .updateCaloriesContainer {
-    background-color: #333;
+    background-color: #161717;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius:25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   }
   
   .updateCaloriesContainer .container {
@@ -20,7 +21,7 @@
   }
   
   .updateCaloriesContainer .formElement {
-    background-color: #444;
+    background-color: #242424;
     border: none;
     border-radius: 4px;
     padding: 10px;
@@ -30,10 +31,12 @@
     display: block;
     margin-left: 10px;
     margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    
   }
   
   .updateCaloriesContainer .button {
-    background-color: #007BFF;
+    background-color: #aa0000;
     color: white;
     border: none;
     border-radius: 4px;
@@ -42,10 +45,12 @@
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    
   }
   
   .updateCaloriesContainer .button:hover {
-    background-color: #0056b3;
+    background-color: #cc0000;
   }
   
   .updateCaloriesContainer .overlay {
@@ -62,7 +67,7 @@
   
   .updateCaloriesContainer .loader {
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
+    border-top: 4px solid #aa0000;
     border-radius: 50%;
     width: 40px;
     height: 40px;
