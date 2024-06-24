@@ -154,12 +154,16 @@ const MealsPage = () => {
       {!user && <RegisterBar />}
       {selectedDish && (
         <Modal 
-          dish={selectedDish} 
-          onClose={() => setSelectedDish(null)} 
-          onEatToday={() => handleEatToday(selectedDish)} 
-          onToggleFavorite={() => handleToggleFavorite(selectedDish._id)}
-          isFavorite={favorites.includes(selectedDish._id)}
-        />
+        dish={selectedDish} 
+        onClose={() => {
+          setSelectedDish(null);
+          document.body.classList.remove(styles.noScroll);
+        }} 
+        onEatToday={() => handleEatToday(selectedDish)} 
+        onToggleFavorite={() => handleToggleFavorite(selectedDish._id)}
+        isFavorite={favorites.includes(selectedDish._id)}
+      />
+      
       )}
       {selectedDish && <div className={styles.backdropBlur} onClick={() => setSelectedDish(null)}></div>}
     </div>
