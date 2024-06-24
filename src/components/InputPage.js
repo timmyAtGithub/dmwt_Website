@@ -84,7 +84,7 @@ const InputPage = ({ setData }) => {
   }
 
   return (
-    <div className={styles.body}>
+    <div className={styles.inputbody}>
       <div className={styles.container}>
         {!isLoading ? (
           <>
