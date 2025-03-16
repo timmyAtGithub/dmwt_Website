@@ -14,7 +14,7 @@ NutriFit ist eine umfassende Ernährungs- und Fitness-App, die Benutzern hilft, 
 ## Installation
 1. **Repository klonen:**
     ```bash
-    git clone https://gitlab.reutlingen-university.de/holms/dmwt_website
+    git clone https://github.com/timmyAtGithub/dmwt_Website
     cd dmwt_website
     ```
 
